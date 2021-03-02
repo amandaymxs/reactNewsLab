@@ -1,0 +1,79 @@
+{
+    "articles": [
+        {
+            "title": "U.S. needs more mines to go electric. Can it build them?",
+            "source": "Reuters",
+            "date": "MARCH 1, 2021",
+            "time": "12:49:00PM",
+            "image": "https://static.reuters.com/resources/r/?m=02&d=20210301&t=2&i=1553355631&r=LYNXNPEH201VT&w=800",
+            "link": "https://www.reuters.com/article/us-usa-mining-insight/to-go-electric-america-needs-more-mines-can-it-build-them-idUSKCN2AT39Z"
+        },
+        {
+            "title": "Lawsuit accuses Amazon of 'systemic' racism in corporate offices",
+            "source": "Reuters",
+            "date": "MARCH 1, 2021",
+            "time": "8:36:01PM",
+            "image": "https://s4.reutersmedia.net/resources/r/?m=02&d=20210301&t=2&i=1553383743&w=400&fh=&fw=&ll=&pl=&sq=&r=LYNXNPEH2026Y",
+            "link": "https://www.reuters.com/article/us-amazon-com-lawsuit-racism/lawsuit-accuses-amazon-of-systemic-racism-in-corporate-offices-idUSKCN2AT3RE"
+        },
+        {
+            "title": "Canadian political parties looking to video games to campaign",
+            "source": "Yahoo Finance",
+            "date": "February 25, 2021",
+            "time": "10:32:12AM",
+            "image": "https://s.yimg.com/ny/api/res/1.2/LmVTYHvtXmMyFnZO77Pnfw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTQ0MS40MDcxNzQ1NTYyMTM-/https://s.yimg.com/os/creatr-uploaded-images/2020-08/01e93fc0-e23c-11ea-bab5-0ee33a3bae57",
+            "link": "https://ca.finance.yahoo.com/news/canadian-political-parties-looking-to-video-games-to-campaign-153244941.html"
+        },
+        {
+            "title": "From engineer to daycare owner: how one woman built a business from the ground up",
+            "source": "Yahoo Finance",
+            "date": "February 26, 2021",
+            "time": "2:45:04PM",
+            "link": "https://ca.finance.yahoo.com/news/north-americas-second-bitcoin-etf-launches-in-canada-today-164700144.html"
+        },
+        {
+            "title": "Most Asia Stocks Rise as Treasury Yields Steady: Markets Wrap",
+            "source": "Bloomberg",
+            "date": "MARCH 1, 2021",
+            "time": "8:59:00PM",
+            "link": "https://www.bloomberg.com/news/articles/2021-03-01/stock-rally-to-extend-in-asia-treasuries-slip-markets-wrap?srnd=markets-vp"
+        },
+        {
+            "title": "Oil Falls With OPEC+ Meeting Hovering Over Tightening Market",
+            "source": "Bloomberg",
+            "date": "February 16, 2021",
+            "time": "9:32:01 AM",
+            "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ijWggkQ7QoD0/v0/-1x-1.jpg",
+            "link": "https://www.bloomberg.com/news/articles/2021-02-16/canada-home-prices-continue-surge-as-inventory-hits-record-low?srnd=premium-canada"
+        },
+        {
+            "title": "The value trade is running ‘way too far and way too fast’ for this stage of the reopening, PNC strategist says",
+            "source": "CNBC",
+            "date": "MARCH 1, 2021",
+            "time": "8:05:56PM",
+            "link": "https://www.cnbc.com/2021/03/01/reopening-trade-is-moving-too-far-and-way-too-fast-pnc-strategist-says.html"
+        },
+        {
+            "title": "New York attorney general warns cryptocurrency industry: ‘Play by the rules or we will shut you down’",
+            "source": "CNBC",
+            "date": "MARCH 1, 2021",
+            "time": "1:51:48PM",
+            "link": "https://www.cnbc.com/2021/03/01/new-york-attorney-general-warns-cryptocurrency-industry-play-by-the-rules-or-we-will-shut-you-down.html"
+        },
+        {
+            "title": "NIO Inc. Reports Unaudited Fourth Quarter and Full Year 2020 Financial Results",
+            "source": "GlobeNewswire",
+            "date": "March 1, 2021",
+            "time": "17:00:03",
+            "link": "https://www.globenewswire.com/news-release/2021/03/01/2184754/0/en/NIO-Inc-Reports-Unaudited-Fourth-Quarter-and-Full-Year-2020-Financial-Results.html"
+        },
+        {
+            "title": "Walmart just took a step closer to being bankers' biggest nightmare",
+            "source": "Financial Post",
+            "date": "March 1, 2021",
+            "time": "12:01:01PM",
+            "image": "https://smartcdn.prod.postmedia.digital/financialpost/wp-content/uploads/2021/03/walmart0301.jpg?quality=90&strip=all&w=400",
+            "link": "https://financialpost.com/news/fp-street/walmart-just-took-a-step-closer-to-being-bankers-biggest-nightmare"
+        }
+    ]
+}
