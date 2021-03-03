@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 import { Box, GridList, GridListTile } from '@material-ui/core';
 
 
-function Tweets() {
+function Tweet() {
     return (
         <Box bgcolor="transparent" p={4}>
 
@@ -10,4 +10,4 @@ function Tweets() {
     );
 }
 
-export default Tweets;
+export default Tweet;

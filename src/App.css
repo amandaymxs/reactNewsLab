@@ -11,13 +11,20 @@ nav {
 }
 
 .nav-title{
-  margin: auto 0.5em;
+  margin: auto 0.2em;
+  font-family: Montserrat, sans-serif;
+  font-size: 3em;
+  font-weight:800;
 }
 
 .nav-list{
+  font-family: Open Sans, sans-serif;
   list-style: none;
   display:flex;
   padding: 0;
+  margin: 0;
+  margin-left: 1em;
+  align-items: flex-end;
 }
 
 .nav-item{
@@ -27,15 +34,12 @@ nav {
   display: flex;
 }
 .nav-right{
-  display: flex;
-  align-items: center;
   height: auto;
-  margin-right: 2em;
 }
 
 .nav-right-item{
-  margin: 1em;
-  padding: 0.3em;
+  margin: auto 1em;
+  line-height: 1.2em;
 }
 
 .header-body{
@@ -45,4 +49,12 @@ nav {
 .nav-link{
   color:white;
   text-decoration: none;
+}
+
+.nav-time{
+  text-align: right;
+  flex-wrap: nowrap;
+  font-size: small;
+margin: 0.5em;
+margin-right: 1em;
 }
