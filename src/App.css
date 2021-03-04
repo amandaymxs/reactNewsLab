@@ -35,6 +35,7 @@ nav {
 }
 .nav-right{
   height: auto;
+  margin-bottom: 0.5em;
 }
 
 .nav-right-item{

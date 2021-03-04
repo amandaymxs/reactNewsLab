@@ -1,44 +1,53 @@
 import React, { Component } from 'react';
-import { Box } from '@material-ui/core';
+import { Box, Link, Button } from '@material-ui/core';
+import { ThemeProvider } from "@material-ui/styles";        //???????
 import Data from '../../data.json';
+import theme from '../../theme';
+import ArticleDateTime from './articleDateTime';
 
 class Article extends Component {
     render() {
-        const sliceInt = 6;
+        const sliceNum = 6;
         const maxNewsNum = 10;
-        let boxData = Data.articles.slice(0, sliceInt);
-        let textData = Data.articles.slice(sliceInt, maxNewsNum);
+        let boxData = Data.articles.slice(0, sliceNum);
+        let textData = Data.articles.slice(sliceNum, maxNewsNum);
         return (
-            <Box display="flex" flexDirection="column">
-                {boxData.map((article, index) => {
-                    return (
-                        <Box key={article.id} cols={index % 3 ? 1 : 2} rows={1}>
-                            <p>{article.time.toUpperCase()}</p>
-                            <p>{article.date.toUpperCase()}</p>
-                            <p>{article.title}</p>
-                            <a href={article.link} className="link">
-                                <p>{article.source.toUpperCase()}</p></a>
-                        </Box>
-                    )
-                })}
-                {textData.map((article, index) => {
-                    return (
-                        <a href={article.link} className="link"><Box key={article.id} display="flex" flexDirection="row">
-                            <Box display="flex" flexDirection="column">
-                                <Box>{article.source.toUpperCase()}</Box>
-                                <Box>{article.time.toUpperCase()}</Box>
-                                <Box>{article.date.toUpperCase()}</Box>
+            <ThemeProvider theme={theme}>
+                <Box display="flex" flexDirection="column">
+                    {boxData.map((article, index) => {
+                        return (
+                            <Box key={article.id} rows={1} marginBottom={3} bgcolor="secondary.main" borderRadius={15}>
+                                <ArticleDateTime data={article} />
+                                <Box component="div">{article.title}</Box>
+                                <Button
+                                    component={Link}
+                                    variant="contained"
+                                    to={article.source.toUpperCase()}
+                                    color="inherit"
+                                    target="_blank"
+                                    rel="noopener"
+                                >
+                                    {article.source.toUpperCase()}
+                                </Button>
                             </Box>
-                            <Box>
-                                <p>{article.title}</p>
+                        )
+                    })}
+                    {textData.map((article, index) => {
+                        return (
+                            <Box key={article.id} display="flex" flexDirection="row">
+                                <Box display="flex" flexDirection="column">
+                                    <Box component="div">{article.source.toUpperCase()}</Box>
+                                    <ArticleDateTime data={article} />
+                                </Box>
+                                <Box>
+                                    <Box component={Link} to={article.link}>{article.title}</Box>
+                                </Box>
                             </Box>
-                        </Box>
-                        </a>
-                    )
-                })
-                }
-                    )
-            </Box >
+                        )
+                    })
+                    }
+                </Box >
+            </ThemeProvider >
         );
     }
 }
