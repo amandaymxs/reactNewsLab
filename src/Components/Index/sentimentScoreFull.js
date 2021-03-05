@@ -19,7 +19,7 @@ const styles = () => ({
     // }
 })
 
-const SentimentScoreFull = ({ color, children }) => {
+const SentimentScoreFull = ({ color, children, classes }) => {
     return (
         <Fragment>
             <Box color={color} className={classes.default}>

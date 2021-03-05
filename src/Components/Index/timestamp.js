@@ -1,16 +1,17 @@
 import React, { Fragment, Component } from 'react';
 import { Typography, withStyles, Box } from '@material-ui/core';
 import { red } from '@material-ui/core/colors';
-import { Block } from '@material-ui/icons';
 
 const styles = (theme) => ({
-    root: {
+    body2: {
         border: 2,
         bgcolor: red,
+        color: '#aaa',
+        fontSize: 11,
     }
 })
 
-class ArticleDateTime extends Component {
+class TimeStamp extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -23,14 +24,14 @@ class ArticleDateTime extends Component {
         const { data } = this.state;
         return (
             <Fragment>
-                <Typography component="p" variant="subtitle1" className={classes.p} display="inline">{data.date.toUpperCase()} </Typography>
-                <Typography component="p" variant="subtitle1" className={classes.p} display="inline"> {data.time.toUpperCase()}</Typography>
+                <Typography component="body2" variant="body2" className={classes.body2} display="inline">{data.date.toUpperCase()}  </Typography>
+                <Typography component="body2" variant="body2" className={classes.body2} display="inline">   {data.time.toUpperCase()}</Typography>
             </Fragment >
         )
     }
 }
 
-export default withStyles(styles, { withTheme: true })(ArticleDateTime);
+export default withStyles(styles, { withTheme: true })(TimeStamp);
 
 
 // const date = () => {
