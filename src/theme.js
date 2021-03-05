@@ -11,29 +11,12 @@ import { blueGrey, grey } from '@material-ui/core/colors'
 const theme = createMuiTheme({
     palette: {
         primary: {
-            main: '#2B3336',
-            contrastText: '#fff',
+            main: '#0F171A',
         },
         secondary: {
-            main: '#0F171A',
-            contrastText: '#fff',
-        },
-        // source: {
-        //     main: lightBlue[700],
-        //     contrastText: '#fff',
-        // },
-        // sentimentNeutral: {
-        //     main: yellow['A400'],
-        //     contrastText: '#fff',
-        // },
-        // sentimentNegative: {
-        //     main: red[400],
-        //     contrastText: '#fff',
-        // },
-        // sentimentPositive: {
-        //     main: green[600],
-        //     contrastText: '#fff',
-        // },
+            main: '#2B3336',
+        }
+
     }
 })
 

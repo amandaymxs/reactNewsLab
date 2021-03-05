@@ -1,33 +1,48 @@
 import '../../index.css';
-import React, { Component, Fragment } from 'react';
+import React from 'react';
 import Article from './article';
 import Tweet from './tweet';
-import { ThemeProvider, Grid, Box } from '@material-ui/core';
-import theme from '../../theme';
+import { Grid, Box, Typography, makeStyles } from '@material-ui/core';
+import PTSans from '../../fonts/PTSans-Regular.ttf'
 
-class Home extends Component {
-    render() {
-        return (
-            <Fragment>
-                <ThemeProvider theme={theme}>
-                    <Grid container p={1} justify="center" direction="row" width="80%" spacing="6">
-                        <Grid item xs={5} order={1}>
-                            <Box bgcolor="primary.main" p={4} mt={4}>
-                                <h1 className="heading">Latest News Articles</h1>
-                                <Article />
-                            </Box>
-                        </Grid>
-                        <Grid item xs={3} order={2}>
-                            <Box bgcolor="primary.main" p={4} mt={4}>
-                                <h1 className="heading">Latest News Tweets</h1>
-                                <Tweet />
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </ThemeProvider>
-            </Fragment >
-        );
+const useStyles = makeStyles((localTheme) => ({
+    h2: {
+        fontSize: 18,
+        fontFamily: PTSans,
+        fontWeight: 600,
+        color: 'inherit',
+        textAlign: 'left',
+        marginBottom: 35,
+    },
+    sectionContainer: {
+        background: '#2B3336',
+        padding: 30,
+        borderRadius: 20,
     }
+}));
+
+const Home = () => {
+    const classes = useStyles();
+    return (
+        <Box component="div" pt={5}>
+            <Grid container justify="center" direction="row" width="80%" spacing="6">
+                <Grid item xs={6} order={1}>
+                    <Box component="div" className={classes.sectionContainer}>
+                        <Typography component='h2' variant='h3' className={classes.h2}>Latest News Articles</Typography>
+                        <Article />
+                    </Box>
+                </Grid>
+                <Grid item xs={3} order={2}>
+                    <Box component="div" className={classes.sectionContainer}>
+                        <Typography component='h2' variant='h3' className={classes.h2}>Latest News Tweets</Typography>
+                        <Tweet />
+                    </Box>
+                </Grid>
+            </Grid>
+        </Box >
+    );
 }
 
 export default Home;
+
+

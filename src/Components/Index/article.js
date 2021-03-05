@@ -1,12 +1,23 @@
 import React, { Component } from 'react';
-import { Box, Link, Button } from '@material-ui/core';
+import { Box, Link, Button, withStyles } from '@material-ui/core';
 import { ThemeProvider } from "@material-ui/styles";        //???????
 import Data from '../../data.json';
 import theme from '../../theme';
 import ArticleDateTime from './articleDateTime';
 
+const styles = (localTheme) => ({
+    root: {
+        rows: 1,
+        marginBottom: 35,
+        borderRadius: 15,
+        padding: 20,
+        color: "#f4f4f4",
+    }
+});
+
 class Article extends Component {
     render() {
+        const { classes } = this.props;
         const sliceNum = 6;
         const maxNewsNum = 10;
         let boxData = Data.articles.slice(0, sliceNum);
@@ -16,7 +27,7 @@ class Article extends Component {
                 <Box display="flex" flexDirection="column">
                     {boxData.map((article, index) => {
                         return (
-                            <Box key={article.id} rows={1} marginBottom={3} bgcolor="secondary.main" borderRadius={15}>
+                            <Box component="div" key={article.id} className={classes.root} bgcolor="primary.main">
                                 <ArticleDateTime data={article} />
                                 <Box component="div">{article.title}</Box>
                                 <Button
@@ -52,4 +63,4 @@ class Article extends Component {
     }
 }
 
-export default Article;
+export default withStyles(styles, { withTheme: true })(Article);

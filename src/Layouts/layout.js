@@ -1,21 +1,19 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, MainPageContent } from 'react';
 import { Header, Footer } from './';
-// import { ThemeProvider } from "@material-ui/styles";
-// import theme from '../theme';
+import { Box } from "@material-ui/core";
 
-function Layout() {
+function Layout({ props }) {
     return (
         <Fragment>
-            {/* <ThemeProvider theme={theme}> */}
-            <div className="header-body">
+            <Box component="div" label="header-body">
                 <Header />
 
-            </div>
+            </Box>
             <Footer />
-            {/* </ThemeProvider> */}
         </Fragment>
-
     );
 }
 
 export default Layout;
+
+//Note: fix main content overlapped by appbar

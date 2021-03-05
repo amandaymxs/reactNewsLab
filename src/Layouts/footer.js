@@ -1,4 +1,3 @@
-import '../App.css';
 import React, { Fragment } from 'react';
 
 function Footer() {
