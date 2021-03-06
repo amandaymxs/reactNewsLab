@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Box, Link, Button, MuiThemeProvider, Typography, Card, CardActions, CardContent } from '@material-ui/core';
 import Data from '../../data.json';
 import theme from '../../theme';
-import Timestamp from './timestamp';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 class Article extends Component {
@@ -24,7 +23,8 @@ class Article extends Component {
                                 padding={2}
                                 color="#f4f4f4"
                             >
-                                <Timestamp data={article} />
+                                <Typography component="h6" variant="h6">{article.date}  </Typography>
+                                <Typography component="h6" variant="h6">   {article.time}</Typography>
                                 <Typography component="h3" variant="h3">{article.title}</Typography>
                                 <Button
                                     variant="contained"
@@ -32,22 +32,30 @@ class Article extends Component {
                                     href={article.link}
                                     endIcon={<ArrowRightIcon fontSize="small" />}
                                 >
-                                    {article.source.toUpperCase()}
+                                    {article.source}
                                 </Button>
                             </Box>
                         )
                     })}
                     {textData.map((article, index) => {
                         return (
-                            < Box key={article.id} display="flex" flexDirection="row" bgcolor="#0F171A">
+                            <Box
+                                key={article.id}
+                                display="flex"
+                                flexDirection="row"
+                                bgcolor="#0F171A"
+                                marginBottom={4}
+                                borderRadius={15}
+                            >
                                 <Box
                                     key={article.id}
                                     display="flex"
                                     flexDirection="column"
-                                    color="#f4f4f4"
+                                    marginRight={7}
                                 >
-                                    <Box>{article.source.toUpperCase()}</Box>
-                                    <Timestamp data={article} />
+                                    <Typography align="right">{article.source}</Typography>
+                                    <Typography component="h6" variant="h6" align="right">{article.date}</Typography>
+                                    <Typography component="h6" variant="h6" align="right">{article.time}</Typography>
                                 </Box>
                                 <Box>
                                     <Button
@@ -55,7 +63,7 @@ class Article extends Component {
                                         size="small"
                                         href={article.link}
                                     >
-                                        {article.title.toUpperCase()}
+                                        {article.title}
                                     </Button>
                                 </Box>
                             </Box>
@@ -69,3 +77,15 @@ class Article extends Component {
 }
 
 export default Article;
+
+
+// const date = () => {
+//     const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+//     const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+//     const getWeekday = new Date().getDay();
+//     const getMonth = new Date().getMonth();
+//     const weekday = weekdays[getWeekday];
+//     const month = months[getMonth];
+
+//     return (weekday + ' ' + new Date().getDate() + ' ' + month + ' ' + new Date().getFullYear() + ' ' + new Date().getHours() + ':' + new Date().getMinutes())
+// }
