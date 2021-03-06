@@ -1,11 +1,11 @@
 import { createMuiTheme } from '@material-ui/core';
 import Ubuntu from './fonts/Ubuntu-Regular.ttf';
 import Montserrat from './fonts/Montserrat-Bold.ttf';
-import { CenterFocusStrong } from '@material-ui/icons';
+import OpenSans from './fonts/OpenSans-Regular.ttf';
 
 const theme = createMuiTheme({
     palette: {
-        primary: {  //large grey
+        primary: {      //large grey
             light: '#2B3336',
             main: '#0F171A',
             dark: '#0a1012',
@@ -15,31 +15,32 @@ const theme = createMuiTheme({
             light: '#656a6b',
             main: '#3f4547',
             dark: '#2c3031',
+            contrastText: '#aaa',
         },
-        info: {    //blue-purple
+        info: {         //blue-purple
             light: '#5E84C3',
             main: '#1C73B9',
             dark: '#3455FF'
         },
-        error: {    //red
+        error: {        //red
             light: '#f5a3a3',
             main: '#F07071',
             dark: '#FF0000',    //ticker
             contrastText: '#EFDEDF',
         },
-        success: {    //green
+        success: {      //green
             light: '#5f9176',
             main: '#377654',
             dark: '#018D31',    //ticker
             contrastText: '#98b8a7',
         },
-        warning: {    //yellow
+        warning: {      //yellow
             light: '#fbcd73',
             main: '#FBB225',
             dark: '#af7c19',
             contrastText: '#FFF7E0',
         },
-        action: {   //orange
+        action: {       //orange
             light: '#ff825b',
             main: '#ff6333',
             dark: '#b24523',
@@ -54,14 +55,10 @@ const theme = createMuiTheme({
 
 theme.props = {
     MuiAppBar: {
-        disableElevation: true,
         position: 'static',
     },
     MuiTypography: {
         color: theme.palette.primary.contrastText,
-    },
-    MuiIconButton: {
-
     },
 }
 
@@ -94,16 +91,40 @@ theme.overrides = {
         },
         containedPrimary: {
             background: 'linear-gradient(135deg, #202D32 20%, #0F171A 90%)',
+        },
+        containedSizeLarge: {
+            target: "_blank",
+            rel: "noopener",
+            backgroundColor: theme.palette.info.main,
+            paddingTop: '0.2em',
+            paddingBottom: '0.2em',
+            fontSize: 12,
+            color: theme.palette.primary.contrastText,
         }
     },
     MuiTypography: {
+        root: {
+            fontFamily: OpenSans,
+        },
         h1: {
             flexGrow: 1,
             fontFamily: Montserrat,
             fontSize: 45,
             fontWeight: 800,
             textDecoration: 'none',
-        }
+        },
+        h3: {
+            fontWeight: 100,
+            fontSize: 18,
+            marginTop: 10,
+            marginBottom: 15,
+        },
+        h6: {
+            display: 'inline',
+            border: 2,
+            color: theme.palette.secondary.contrastText,
+            fontSize: 11.5,
+        },
     },
 }
 export default theme;

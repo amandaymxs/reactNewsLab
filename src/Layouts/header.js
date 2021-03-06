@@ -1,29 +1,19 @@
-import React, { Fragment } from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import React, { Fragment, Component } from 'react';
 import { Navbar } from './index';
-import Home from '../Components/Index/index';
-import News from '../Components/news';
-import About from '../Components/about';
-import Contact from '../Components/contact';
-import { ThemeProvider } from '@material-ui/core';
+
+import { MuiThemeProvider } from '@material-ui/core';
 import theme from '../theme';
 
-function Header() {
-    return (
-        <Fragment>
-            <ThemeProvider theme={theme}>
-                <Router >
+class Header extends Component {
+    render() {
+        return (
+            <Fragment>
+                <MuiThemeProvider theme={theme}>
                     <Navbar />
-                    <Switch>
-                        <Route path="/" exact component={Home} />
-                        <Route path="/News" component={News} />
-                        <Route path="/about" component={About} />
-                        <Route path="/contact" component={Contact} />
-                    </Switch>
-                </Router>
-            </ThemeProvider>
-        </Fragment>
-    );
+                </MuiThemeProvider>
+            </Fragment >
+        );
+    }
 }
 
 export default Header;
