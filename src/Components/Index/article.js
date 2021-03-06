@@ -39,13 +39,24 @@ class Article extends Component {
                     })}
                     {textData.map((article, index) => {
                         return (
-                            <Box key={article.id} display="flex" flexDirection="row">
-                                <Box display="flex" flexDirection="column">
+                            < Box key={article.id} display="flex" flexDirection="row" bgcolor="#0F171A">
+                                <Box
+                                    key={article.id}
+                                    display="flex"
+                                    flexDirection="column"
+                                    color="#f4f4f4"
+                                >
                                     <Box>{article.source.toUpperCase()}</Box>
                                     <Timestamp data={article} />
                                 </Box>
                                 <Box>
-                                    <Box component={Link} to={article.link}>{article.title}</Box>
+                                    <Button
+                                        variant="text"
+                                        size="small"
+                                        href={article.link}
+                                    >
+                                        {article.title.toUpperCase()}
+                                    </Button>
                                 </Box>
                             </Box>
                         )
