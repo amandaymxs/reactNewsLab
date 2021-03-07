@@ -60,9 +60,6 @@ theme.props = {
     MuiTypography: {
         color: theme.palette.primary.contrastText,
     },
-    MuiCard: {
-        raised: true,
-    }
 }
 
 theme.overrides = {
@@ -101,9 +98,9 @@ theme.overrides = {
             backgroundColor: theme.palette.info.main,
             paddingTop: '0.2em',
             paddingBottom: '0.2em',
-            fontSize: 12,
             color: theme.palette.primary.contrastText,
             textTransform: 'uppercase',
+            fontSize: 12,
         },
         textSizeSmall: {
             textTransform: 'capitalize',
@@ -125,7 +122,6 @@ theme.overrides = {
             fontWeight: 100,
             fontSize: 18,
             marginTop: 10,
-            marginBottom: 15,
             textTransform: 'capitalize',
         },
         h6: {
@@ -138,6 +134,14 @@ theme.overrides = {
         alignRight: {
             fontSize: 12,
             textTransform: 'uppercase',
+        },
+    },
+    MuiCard: {
+        root: {
+            backgroundColor: theme.palette.primary.main,
+            borderRadius: 15,
+            marginBottom: 20,
+            // color: theme.palette.primary.contrastText,
         },
     },
 }

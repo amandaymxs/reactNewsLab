@@ -7,7 +7,8 @@
             "time": "12:49:00PM",
             "image": "https://static.reuters.com/resources/r/?m=02&d=20210301&t=2&i=1553355631&r=LYNXNPEH201VT&w=800",
             "link": "https://www.reuters.com/article/us-usa-mining-insight/to-go-electric-america-needs-more-mines-can-it-build-them-idUSKCN2AT39Z",
-            "id": 1
+            "id": 1,
+            "sentimentScore": -10
         },
         {
             "title": "Lawsuit accuses Amazon of 'systemic' racism in corporate offices",
@@ -16,7 +17,8 @@
             "time": "8:36:01PM",
             "image": "https://s4.reutersmedia.net/resources/r/?m=02&d=20210301&t=2&i=1553383743&w=400&fh=&fw=&ll=&pl=&sq=&r=LYNXNPEH2026Y",
             "link": "https://www.reuters.com/article/us-amazon-com-lawsuit-racism/lawsuit-accuses-amazon-of-systemic-racism-in-corporate-offices-idUSKCN2AT3RE",
-            "id": 2
+            "id": 2,
+            "sentimentScore": -25
         },
         {
             "title": "Canadian political parties looking to video games to campaign",
@@ -25,7 +27,8 @@
             "time": "10:32:12AM",
             "image": "https://s.yimg.com/ny/api/res/1.2/LmVTYHvtXmMyFnZO77Pnfw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTQ0MS40MDcxNzQ1NTYyMTM-/https://s.yimg.com/os/creatr-uploaded-images/2020-08/01e93fc0-e23c-11ea-bab5-0ee33a3bae57",
             "link": "https://ca.finance.yahoo.com/news/canadian-political-parties-looking-to-video-games-to-campaign-153244941.html",
-            "id": 3
+            "id": 3,
+            "sentimentScore": 15
         },
         {
             "title": "From engineer to daycare owner: how one woman built a business from the ground up",
@@ -33,7 +36,8 @@
             "date": "February 26, 2021",
             "time": "2:45:04PM",
             "link": "https://ca.finance.yahoo.com/news/north-americas-second-bitcoin-etf-launches-in-canada-today-164700144.html",
-            "id": 4
+            "id": 4,
+            "sentimentScore": 3
         },
         {
             "title": "Most Asia Stocks Rise as Treasury Yields Steady: Markets Wrap",
@@ -41,7 +45,8 @@
             "date": "MARCH 1, 2021",
             "time": "8:59:00PM",
             "link": "https://www.bloomberg.com/news/articles/2021-03-01/stock-rally-to-extend-in-asia-treasuries-slip-markets-wrap?srnd=markets-vp",
-            "id": 5
+            "id": 5,
+            "sentimentScore": -1
         },
         {
             "title": "Oil Falls With OPEC+ Meeting Hovering Over Tightening Market",
@@ -50,7 +55,8 @@
             "time": "9:32:01 AM",
             "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ijWggkQ7QoD0/v0/-1x-1.jpg",
             "link": "https://www.bloomberg.com/news/articles/2021-02-16/canada-home-prices-continue-surge-as-inventory-hits-record-low?srnd=premium-canada",
-            "id": 6
+            "id": 6,
+            "sentimentScore": -40
         },
         {
             "title": "The value trade is running ‘way too far and way too fast’ for this stage of the reopening, PNC strategist says",
@@ -58,7 +64,8 @@
             "date": "MARCH 1, 2021",
             "time": "8:05:56PM",
             "link": "https://www.cnbc.com/2021/03/01/reopening-trade-is-moving-too-far-and-way-too-fast-pnc-strategist-says.html",
-            "id": 7
+            "id": 7,
+            "sentimentScore": 35
         },
         {
             "title": "New York attorney general warns cryptocurrency industry: ‘Play by the rules or we will shut you down’",
@@ -66,7 +73,8 @@
             "date": "MARCH 1, 2021",
             "time": "1:51:48PM",
             "link": "https://www.cnbc.com/2021/03/01/new-york-attorney-general-warns-cryptocurrency-industry-play-by-the-rules-or-we-will-shut-you-down.html",
-            "id": 8
+            "id": 8,
+            "sentimentScore": 32.5
         },
         {
             "title": "NIO Inc. Reports Unaudited Fourth Quarter and Full Year 2020 Financial Results",
@@ -74,7 +82,8 @@
             "date": "March 1, 2021",
             "time": "17:00:03",
             "link": "https://www.globenewswire.com/news-release/2021/03/01/2184754/0/en/NIO-Inc-Reports-Unaudited-Fourth-Quarter-and-Full-Year-2020-Financial-Results.html",
-            "id": 9
+            "id": 9,
+            "sentimentScore": 17.5
         },
         {
             "title": "Walmart just took a step closer to being bankers' biggest nightmare",
@@ -83,7 +92,8 @@
             "time": "12:01:01PM",
             "image": "https://smartcdn.prod.postmedia.digital/financialpost/wp-content/uploads/2021/03/walmart0301.jpg?quality=90&strip=all&w=400",
             "link": "https://financialpost.com/news/fp-street/walmart-just-took-a-step-closer-to-being-bankers-biggest-nightmare",
-            "id": 10
+            "id": 10,
+            "sentimentScore": 2
         }
     ]
 }

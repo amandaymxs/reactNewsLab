@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Box, Link, Button, MuiThemeProvider, Typography, Card, CardActions, CardContent } from '@material-ui/core';
+import { Box, Link, Button, MuiThemeProvider, Typography, Card, CardContent, CardActions, CardActionArea } from '@material-ui/core';
 import Data from '../../data.json';
 import theme from '../../theme';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -12,29 +12,47 @@ class Article extends Component {
         let textData = Data.articles.slice(sliceNum, maxNewsNum);
         return (
             <MuiThemeProvider theme={theme}>
-                <Box display="flex" flexDirection="column">
+                <CardContent>
                     {boxData.map((article, index) => {
                         return (
-                            <Box
+                            <Card
                                 key={article.id}
-                                bgcolor="#0F171A"
-                                marginBottom={4}
-                                borderRadius={15}
-                                padding={2}
-                                color="#f4f4f4"
                             >
-                                <Typography component="h6" variant="h6">{article.date}  </Typography>
-                                <Typography component="h6" variant="h6">   {article.time}</Typography>
-                                <Typography component="h3" variant="h3">{article.title}</Typography>
-                                <Button
-                                    variant="contained"
-                                    size="large"
-                                    href={article.link}
-                                    endIcon={<ArrowRightIcon fontSize="small" />}
+                                {/* <CardActionArea> */}
+                                <CardContent>
+                                    <Box display="flex" justifyContent="space-between">
+                                        <Box>
+                                            <Typography component="h6" variant="h6">{article.date}  </Typography>
+                                            <Typography component="h6" variant="h6">   {article.time}</Typography>
+                                        </Box>
+                                        <Box >
+                                            <Button
+                                                variant="contained"
+                                                size="small"
+                                                style={{ fontSize: 11 }}
+                                            >
+                                                Sentiment Score: {article.sentimentScore}</Button>
+                                        </Box>
+                                    </Box>
+                                    <Typography component="h3" variant="h3">{article.title}</Typography>
+                                </CardContent>
+                                <CardActions
+                                    style={{
+                                        width: "97%",
+                                        justifyContent: "flex-end"
+                                    }}
                                 >
-                                    {article.source}
-                                </Button>
-                            </Box>
+                                    <Button
+                                        variant="contained"
+                                        size="large"
+                                        href={article.link}
+                                        endIcon={<ArrowRightIcon fontSize="small" />}
+                                    >
+                                        {article.source}
+                                    </Button>
+                                </CardActions>
+                                {/* </CardActionArea> */}
+                            </Card>
                         )
                     })}
                     {textData.map((article, index) => {
@@ -68,9 +86,8 @@ class Article extends Component {
                                 </Box>
                             </Box>
                         )
-                    })
-                    }
-                </Box >
+                    })}
+                </CardContent>
             </MuiThemeProvider >
         );
     }
