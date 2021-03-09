@@ -10,9 +10,9 @@ const Home = () => {
     return (
         <MuiThemeProvider theme={theme}>
             <Box pt={5}>
-                <Grid container justify="center" direction="row" width="80%" spacing={6}>
-                    <Grid item xs={6} order={1}>
-                        <Card style={{ backgroundColor: theme.palette.primary.light }}>
+                <Grid container justify="center" direction="row" width="80%" spacing={6} >
+                    <Grid item xs={6} order={1} >
+                        <Card style={{ backgroundColor: theme.palette.primary.light, display: 'flex', flexDirection: 'column', justifyContent: 'center' }} >
                             <CardHeader
                                 title="Latest News Articles"
                                 fontSize={18}

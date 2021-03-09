@@ -106,6 +106,10 @@ theme.overrides = {
             textTransform: 'capitalize',
             fontSize: 12,
         },
+        containedSizeSmall: {
+            padding: '0 1.5em',
+            fontSize: 10
+        }
     },
     MuiTypography: {
         root: {

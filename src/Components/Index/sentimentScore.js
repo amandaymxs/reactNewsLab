@@ -2,6 +2,11 @@ import React, { Component } from 'react';
 import { MuiThemeProvider, Button } from '@material-ui/core';
 import theme from '../../theme';
 
+const style = () => {
+    root: {
+
+    }
+}
 
 class SentimentScore extends Component {
     constructor(props) {
@@ -34,12 +39,14 @@ class SentimentScore extends Component {
             <MuiThemeProvider theme={theme} >
                 <Button
                     variant="contained"
-                    size="small"
+                    size="large"
                     style={{
                         color: color,
                         backgroundColor: backgroundColor,
-                        border: border
+                        border: border,
+                        textTransform: 'capitalize',
                     }}
+                    disabled
                 > Sentiment Score: {data} </Button>
             </MuiThemeProvider >
         )

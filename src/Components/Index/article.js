@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Box, Button, MuiThemeProvider, Typography, Card, CardContent, CardActions } from '@material-ui/core';
+import { CardContent } from '@material-ui/core';
 import Data from '../../data.json';
-import theme from '../../theme';
-import ArrowRightIcon from '@material-ui/icons/ArrowRight';
-import SentimentScore from './sentimentScore';
+import ArticleLarge from './articleLarge';
+import ArticleSmall from './articleSmall';
 
 class Article extends Component {
     render() {
@@ -13,83 +12,10 @@ class Article extends Component {
         let textData = Data.articles.slice(sliceNum, maxNewsNum);
 
         return (
-            <MuiThemeProvider theme={theme}>
-                <CardContent>
-                    {boxData.map((article) => {
-                        return (
-                            <Card
-                                key={article.id}
-                                style={{ backgroundColor: theme.palette.primary.dark }}
-                            >
-                                {/* <CardActionArea> */}
-                                < CardContent >
-                                    <Box display="flex" justifyContent="space-between">
-                                        <Box>
-                                            <Typography component="h6" variant="h6">{article.date}  </Typography>
-                                            <Typography component="h6" variant="h6">   {article.time}</Typography>
-                                        </Box>
-                                        <Box>
-                                            <SentimentScore data={article.sentimentScore} />
-                                        </Box>
-                                    </Box>
-                                    <Typography component="h3" variant="h3">{article.title}</Typography>
-                                </CardContent>
-                                <CardActions
-                                    style={{
-                                        width: "97%",
-                                        justifyContent: "flex-end"
-                                    }}
-                                >
-                                    <Button
-                                        variant="contained"
-                                        size="large"
-                                        href={article.link}
-                                        endIcon={<ArrowRightIcon fontSize="small" />}
-                                    >
-                                        {article.source}
-                                    </Button>
-                                </CardActions>
-                                {/* </CardActionArea> */}
-                            </Card>
-                        )
-                    })
-                    }
-                    {
-                        textData.map((article) => {
-                            return (
-                                <Box
-                                    key={article.id}
-                                    display="flex"
-                                    flexDirection="row"
-                                    bgcolor="#0F171A"
-                                    marginBottom={4}
-                                    borderRadius={15}
-                                >
-                                    <Box
-                                        key={article.id}
-                                        display="flex"
-                                        flexDirection="column"
-                                        marginRight={7}
-                                    >
-                                        <Typography align="right">{article.source}</Typography>
-                                        <Typography component="h6" variant="h6" align="right">{article.date}</Typography>
-                                        <Typography component="h6" variant="h6" align="right">{article.time}</Typography>
-                                    </Box>
-                                    <Box>
-                                        <Button
-                                            variant="text"
-                                            size="small"
-                                            href={article.link}
-                                        >
-                                            {article.title}
-                                        </Button>
-                                    </Box>
-                                </Box>
-                            )
-                        })
-                    }
-                </CardContent >
-            </MuiThemeProvider >
+            <CardContent >
+                <ArticleLarge data={boxData} />
+                <ArticleSmall data={textData} />
+            </CardContent >
         );
     }
 }
