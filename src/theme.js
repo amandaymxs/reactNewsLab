@@ -23,19 +23,19 @@ const theme = createMuiTheme({
             dark: '#3455FF'
         },
         error: {        //red
-            light: '#f5a3a3',
+            light: '#a84e4f',
             main: '#F07071',
             dark: '#FF0000',    //ticker
             contrastText: '#EFDEDF',
         },
         success: {      //green
-            light: '#5f9176',
+            light: '#26523a',
             main: '#377654',
             dark: '#018D31',    //ticker
             contrastText: '#98b8a7',
         },
         warning: {      //yellow
-            light: '#fbcd73',
+            light: '#af7c19',
             main: '#FBB225',
             dark: '#af7c19',
             contrastText: '#FFF7E0',
@@ -76,7 +76,7 @@ theme.overrides = {
             boxShadow: 'none',
         },
         edgeStart: {
-            color: '#f4f4f4',
+            color: theme.palette.primary.contrastText,
             '&:hover': {
                 color: theme.palette.action.light,
             },
@@ -96,11 +96,11 @@ theme.overrides = {
             target: "_blank",
             rel: "noopener",
             backgroundColor: theme.palette.info.main,
-            paddingTop: '0.2em',
-            paddingBottom: '0.2em',
+            padding: '0 1.5em',
             color: theme.palette.primary.contrastText,
             textTransform: 'uppercase',
             fontSize: 12,
+
         },
         textSizeSmall: {
             textTransform: 'capitalize',
@@ -138,11 +138,11 @@ theme.overrides = {
     },
     MuiCard: {
         root: {
-            backgroundColor: theme.palette.primary.main,
             borderRadius: 15,
             marginBottom: 20,
             // color: theme.palette.primary.contrastText,
         },
+
     },
 }
 export default theme;

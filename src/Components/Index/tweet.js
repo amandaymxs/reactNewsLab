@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react';
-import { Box, GridList, GridListTile } from '@material-ui/core';
+import React from 'react';
+import { Box } from '@material-ui/core';
 
 
 function Tweet() {
