@@ -196,11 +196,6 @@ theme.overrides = {
             fontSize: '0.9rem',
         },
     },
-    MuiCardActions: {
-        root: {
-            justifyContent: 'center',
-        }
-    },
     MuiTypography: {
         root: {
             flexGrow: 1,
@@ -247,16 +242,20 @@ theme.overrides = {
     },
     MuiCardHeader: {
         title: {
-            paddingLeft: '2rem',
             fontSize: '1.6rem',
             fontWeight: 600,
             textTransform: 'capitalize',
             color: theme.palette.primary.contrastText,
         }
     },
+    MuiCardActions: {
+        root: {
+            justifyContent: 'center',
+        }
+    },
     MuiGrid: {
         container: {
-            justifyContent: "center",
+            justifyContent: "space-evenly",
         },
         spacingXs2: {
             width: '100%',
@@ -265,8 +264,8 @@ theme.overrides = {
     },
     MuiAvatar: {
         root: {
-            width: '4.5rem',
-            height: '4.5rem',
+            width: '100%',
+            height: '100%',
             margin: 0,
             border: '0.12rem solid black',
         }

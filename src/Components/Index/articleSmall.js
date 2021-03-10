@@ -1,7 +1,19 @@
 import React, { Component } from 'react';
-import { Grid, Button, Typography, MuiThemeProvider } from '@material-ui/core';
+import { Grid, Button, Typography, MuiThemeProvider, withStyles } from '@material-ui/core';
 import theme from '../../theme';
 import SentimentScore from './sentimentScore';
+
+const styles = {
+    articleContainer: {
+        justifyContent: 'center'
+    },
+    articleSource: {
+        fontSize: '1em',
+        fontWeight: '600',
+        color: theme.palette.info.main,
+        fontStyle: 'italic'
+    }
+}
 
 class ArticleSmall extends Component {
     constructor(props) {
@@ -12,47 +24,45 @@ class ArticleSmall extends Component {
     }
     render() {
         const { data } = this.state;
+        const { classes } = this.props;
         return (
             <MuiThemeProvider theme={theme}>
-                {
-                    data.map((article) => {
+                <Grid item>
+                    {data.map((article) => {
                         return (
                             <Grid
                                 key={article.id}
                                 container
                                 spacing={3}
+                                classes={{ root: classes.articleContainer }}
                             >
                                 <Grid
-                                    order={1}
+                                    container
                                     item
+                                    order={1}
                                     direction="column"
                                     xs={2}
                                     align="right"
-                                // style={{ borderRight: `1px solid ${theme.palette.secondary.light}` }}
                                 >
-                                    <Grid item><Typography component="h6" variant="h6" style={{ fontSize: '1em', fontWeight: '600', color: theme.palette.info.main, fontStyle: 'italic' }}>{article.source}</Typography></Grid>
-                                    {/* <Grid item><Typography component="h6" variant="h6">{article.date}</Typography></Grid> */}
+                                    <Grid item><Typography component="h6" variant="h6" classes={{ root: classes.articleSource }}>{article.source}</Typography></Grid>
                                     <Grid item><SentimentScore data={article.sentimentScore} title="S/S" intSize={10} /></Grid>
                                     <Grid item><Typography component="h6" variant="h6">{article.time}</Typography></Grid>
                                 </Grid>
 
-                                <Grid xs={8} order={2} item >
-                                    <Button
-                                        variant="text"
-                                        size="small"
-                                        href={article.link}
-                                    >
+                                <Grid item order={2} xs={8}>
+                                    <Button variant="text" size="small" href={article.link}>
                                         {article.title}
                                     </Button>
                                 </Grid>
                             </Grid>
                         )
                     })
-                }
+                    }
+                </Grid>
             </MuiThemeProvider>
         )
     }
 }
 
-export default ArticleSmall;
+export default withStyles(styles)(ArticleSmall);
 
