@@ -2,7 +2,7 @@ import '../../index.css';
 import React from 'react';
 import Article from './article';
 import Tweet from './tweet';
-import { MuiThemeProvider, Grid, Box, Card, CardHeader, CardActions } from '@material-ui/core';
+import { MuiThemeProvider, Grid, Box, Card, CardHeader, CardActions, Button, CardContent } from '@material-ui/core';
 import theme from '../../theme';
 
 const Home = () => {
@@ -22,10 +22,12 @@ const Home = () => {
                             <CardHeader
                                 title="Latest News Articles"
                             ></CardHeader>
-                            <Article />
-                            <CardActions >
-                                Load More
-                        </CardActions >
+                            <CardContent>
+                                <Article />
+                            </CardContent>
+                            <CardActions style={{ padding: '1em 3em' }}>
+                                <Button variant="text" color="secondary">Load More</Button>
+                            </CardActions >
                         </Card>
                     </Grid>
                     <Grid item xs={4} order={2}>
@@ -33,7 +35,9 @@ const Home = () => {
                             <CardHeader
                                 title="Latest News Tweets"
                             ></CardHeader>
-                            <Tweet />
+                            <CardContent>
+                                <Tweet />
+                            </CardContent>
                         </Card>
                     </Grid>
                 </Grid>

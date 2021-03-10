@@ -7,7 +7,7 @@
             "time": "12:49:00PM",
             "image": "https://static.reuters.com/resources/r/?m=02&d=20210301&t=2&i=1553355631&r=LYNXNPEH201VT&w=800",
             "link": "https://www.reuters.com/article/us-usa-mining-insight/to-go-electric-america-needs-more-mines-can-it-build-them-idUSKCN2AT39Z",
-            "id": 1,
+            "id": "a1",
             "sentimentScore": -10
         },
         {
@@ -17,7 +17,7 @@
             "time": "8:36:01PM",
             "image": "https://s4.reutersmedia.net/resources/r/?m=02&d=20210301&t=2&i=1553383743&w=400&fh=&fw=&ll=&pl=&sq=&r=LYNXNPEH2026Y",
             "link": "https://www.reuters.com/article/us-amazon-com-lawsuit-racism/lawsuit-accuses-amazon-of-systemic-racism-in-corporate-offices-idUSKCN2AT3RE",
-            "id": 2,
+            "id": "a2",
             "sentimentScore": -25
         },
         {
@@ -27,7 +27,7 @@
             "time": "10:32:12AM",
             "image": "https://s.yimg.com/ny/api/res/1.2/LmVTYHvtXmMyFnZO77Pnfw--/YXBwaWQ9aGlnaGxhbmRlcjt3PTcwNTtoPTQ0MS40MDcxNzQ1NTYyMTM-/https://s.yimg.com/os/creatr-uploaded-images/2020-08/01e93fc0-e23c-11ea-bab5-0ee33a3bae57",
             "link": "https://ca.finance.yahoo.com/news/canadian-political-parties-looking-to-video-games-to-campaign-153244941.html",
-            "id": 3,
+            "id": "a3",
             "sentimentScore": 15
         },
         {
@@ -36,7 +36,7 @@
             "date": "February 26, 2021",
             "time": "2:45:04PM",
             "link": "https://ca.finance.yahoo.com/news/north-americas-second-bitcoin-etf-launches-in-canada-today-164700144.html",
-            "id": 4,
+            "id": "a4",
             "sentimentScore": 3
         },
         {
@@ -45,7 +45,7 @@
             "date": "MARCH 1, 2021",
             "time": "8:59:00PM",
             "link": "https://www.bloomberg.com/news/articles/2021-03-01/stock-rally-to-extend-in-asia-treasuries-slip-markets-wrap?srnd=markets-vp",
-            "id": 5,
+            "id": "a5",
             "sentimentScore": -1
         },
         {
@@ -55,7 +55,7 @@
             "time": "9:32:01 AM",
             "image": "https://assets.bwbx.io/images/users/iqjWHBFdfxIU/ijWggkQ7QoD0/v0/-1x-1.jpg",
             "link": "https://www.bloomberg.com/news/articles/2021-02-16/canada-home-prices-continue-surge-as-inventory-hits-record-low?srnd=premium-canada",
-            "id": 6,
+            "id": "a6",
             "sentimentScore": -40
         },
         {
@@ -64,7 +64,7 @@
             "date": "MARCH 1, 2021",
             "time": "8:05:56PM",
             "link": "https://www.cnbc.com/2021/03/01/reopening-trade-is-moving-too-far-and-way-too-fast-pnc-strategist-says.html",
-            "id": 7,
+            "id": "a7",
             "sentimentScore": 35
         },
         {
@@ -73,7 +73,7 @@
             "date": "MARCH 1, 2021",
             "time": "1:51:48PM",
             "link": "https://www.cnbc.com/2021/03/01/new-york-attorney-general-warns-cryptocurrency-industry-play-by-the-rules-or-we-will-shut-you-down.html",
-            "id": 8,
+            "id": "a8",
             "sentimentScore": 32.5
         },
         {
@@ -82,7 +82,7 @@
             "date": "March 1, 2021",
             "time": "17:00:03",
             "link": "https://www.globenewswire.com/news-release/2021/03/01/2184754/0/en/NIO-Inc-Reports-Unaudited-Fourth-Quarter-and-Full-Year-2020-Financial-Results.html",
-            "id": 9,
+            "id": "a9",
             "sentimentScore": 17.5
         },
         {
@@ -92,8 +92,100 @@
             "time": "12:01:01PM",
             "image": "https://smartcdn.prod.postmedia.digital/financialpost/wp-content/uploads/2021/03/walmart0301.jpg?quality=90&strip=all&w=400",
             "link": "https://financialpost.com/news/fp-street/walmart-just-took-a-step-closer-to-being-bankers-biggest-nightmare",
-            "id": 10,
+            "id": "a10",
             "sentimentScore": 2
+        }
+    ],
+    "tweets": [
+        {
+            "text": "Here's how Silicon Valley's \"bro culture\" affects everyone",
+            "source": "BusinessInsider",
+            "date": "March 10, 2021",
+            "time": "11:19:01AM",
+            "avatar": "https://pbs.twimg.com/profile_images/1199017286780231684/P_hQmsjg_200x200.jpg",
+            "link": "https://twitter.com/BusinessInsider/status/1369684454835433472",
+            "id": "t1",
+            "sentimentScore": -2
+        },
+        {
+            "text": "Looking ahead on $RBLX IPO, be careful out there. $GLUU $ZNGA Attack |",
+            "source": "BENZINGA",
+            "date": "March 10, 2021",
+            "time": "11:25 AM",
+            "avatar": "https://pbs.twimg.com/profile_images/1174373766631215105/Ftdo_ouW_200x200.png",
+            "link": "https://twitter.com/Benzinga/status/1369685980211515395",
+            "id": "t2",
+            "sentimentScore": 1
+        },
+        {
+            "text": "Covid changed how we think of offices. Now companies want them to work as hard as they do",
+            "source": "CNBC",
+            "date": "March 10, 2021",
+            "time": "11:25 AM",
+            "avatar": "https://pbs.twimg.com/profile_images/1317082585382735874/DBEM-rWK_200x200.png",
+            "link": "https://twitter.com/CNBC/status/1369685842193682433",
+            "id": "t3",
+            "sentimentScore": 10
+        },
+        {
+            "text": "European Commission Vice-President Vera Jourova said Joe Biden's election as president means “the U.S. as we know it is back”",
+            "source": "business",
+            "date": "March 10, 2021",
+            "time": "11:23:08AM",
+            "avatar": "https://pbs.twimg.com/profile_images/991818020233404416/alrBF_dr_200x200.jpg",
+            "link": "https://twitter.com/business/status/1369685636978982921",
+            "id": "t4",
+            "sentimentScore": 74
+        },
+        {
+            "text": "How the fallout from Prince Harry and Meghan Markle’s interview with Oprah will shape their endless battle with the British press",
+            "source": "forbes",
+            "date": "March 10, 2021",
+            "time": "11:16:05AM",
+            "avatar": "https://pbs.twimg.com/profile_images/1106672424605630465/IC9ipKIt_200x200.png",
+            "link": "https://twitter.com/Forbes/status/1369683488027316236            ",
+            "id": "t5",
+            "sentimentScore": -14
+        },
+        {
+            "text": "Big East Commissioner on basketball after COVID-19: Hopes for 'a happy' season",
+            "source": "YahooFinance",
+            "date": "March 10, 2021",
+            "time": "11:31:35AM",
+            "avatar": "https://pbs.twimg.com/profile_images/1176105064219516928/qwU6ALZR_200x200.png",
+            "link": "https://twitter.com/YahooFinance/status/1369687387933118470",
+            "id": "t6",
+            "sentimentScore": 44
+        },
+        {
+            "text": "Ten years after the Fukushima disaster, deep anxiety remains in Japan over nuclear power. In one remote fishing outpost, the politically fraught issue of storing nuclear waste is haunted by the legacy of Fukushima.",
+            "source": "nytimesbusiness",
+            "date": "March 10, 2021",
+            "time": "11:30:08AM",
+            "avatar": "https://pbs.twimg.com/profile_images/963826250895654912/P-W5YvhN_200x200.jpg",
+            "link": "https://twitter.com/nytimesbusiness/status/1369687021262934019",
+            "id": "t7",
+            "sentimentScore": -83
+        },
+        {
+            "text": "Companies can increase perceived value by raising their share price and reducing shares outstanding.",
+            "source": "WSJmarkets",
+            "date": "March 10, 2021",
+            "time": "11:15:06AM",
+            "avatar": "https://pbs.twimg.com/profile_images/954404826212904960/TnG97-_8_200x200.jpg",
+            "link": "https://twitter.com/WSJmarkets/status/1369683239791656963",
+            "id": "t8",
+            "sentimentScore": 66
+        },
+        {
+            "text": "For each of those seven energy companies, short sellers have borrowed at least 10% of the float to bet against the shares.",
+            "source": "barronsonline",
+            "date": "March 10, 2021",
+            "time": "10:55:10AM",
+            "avatar": "https://pbs.twimg.com/profile_images/960597678076956672/eCDXYGQc_200x200.jpg",
+            "link": "https://twitter.com/barronsonline/status/1369678222955253760",
+            "id": "t9",
+            "sentimentScore": 6
         }
     ]
 }

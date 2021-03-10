@@ -98,9 +98,9 @@ const theme = createMuiTheme({
         },
         success: {      //green
             light: '#26523a',
-            main: '#377654',
+            main: '#388e3c',
             dark: '#018D31',    //ticker
-            contrastText: '#98b8a7',
+            contrastText: '#e5f6ec',
         },
         warning: {      //yellow
             light: '#af7c19',
@@ -161,25 +161,45 @@ theme.overrides = {
             color: theme.palette.primary.contrastText,
         },
         containedPrimary: {
-            background: 'linear-gradient(135deg, #202D32 20%, #0F171A 90%)',
+            background: `linear-gradient(135deg, ${theme.palette.primary.main} 20%, ${theme.palette.primary.light} 80%)`,
+        },
+        textSecondary: {
+            color: theme.palette.primary.contrastText,
+            fontWeight: 800,
+            '&:hover': {
+                color: theme.palette.action.light,
+            },
         },
         containedSizeLarge: {
             target: "_blank",
             rel: "noopener",
             backgroundColor: theme.palette.info.main,
-            padding: '0 1.3rem',
+            padding: '0 1.2em',
             color: theme.palette.primary.contrastText,
             textTransform: 'uppercase',
-            fontFamily: 'Open Sans',
             fontSize: '0.8rem',
             fontWeight: 600,
             fontStyle: 'italic',
-
+        },
+        containedSizeSmall: {
+            target: "_blank",
+            rel: "noopener",
+            backgroundColor: theme.palette.info.light,
+            padding: '0 0.8em',
+            color: theme.palette.primary.contrastText,
+            textTransform: 'uppercase',
+            fontSize: '0.7rem',
+            fontWeight: 400,
         },
         textSizeSmall: {
             textTransform: 'capitalize',
             fontSize: '0.9rem',
         },
+    },
+    MuiCardActions: {
+        root: {
+            justifyContent: 'center',
+        }
     },
     MuiTypography: {
         root: {
@@ -207,6 +227,14 @@ theme.overrides = {
             fontSize: '0.65rem',
             textTransform: 'uppercase',
         },
+        subtitle1: {
+            fontSize: '0.8rem',
+            textTransform: 'uppercase',
+            fontWeight: 400,
+        },
+        body1: {
+            fontWeight: 100,
+        },
     },
     MuiCard: {
         root: {
@@ -214,11 +242,11 @@ theme.overrides = {
             marginBottom: 20,
             flexDirection: 'column',
             backgroundColor: theme.palette.primary.light,
+            padding: '1.5rem'
         },
     },
     MuiCardHeader: {
         title: {
-            paddingTop: '1rem',
             paddingLeft: '2rem',
             fontSize: '1.6rem',
             fontWeight: 600,
@@ -234,10 +262,15 @@ theme.overrides = {
             width: '100%',
             direction: 'row',
         },
-        gridXs3: {
-
-        },
     },
+    MuiAvatar: {
+        root: {
+            width: '4.5rem',
+            height: '4.5rem',
+            margin: 0,
+            border: '0.12rem solid black',
+        }
+    }
 }
 
 export default theme;

@@ -24,22 +24,21 @@ class ArticleLarge extends Component {
                                 padding: '1.2em',
                             }}
                         >
-                            {/* <CardActionArea> */}
                             <CardContent>
                                 <Box display="flex" justifyContent="space-between">
                                     <Box>
-                                        <Typography component="h5" variant="h5" display="inline">{article.date}  </Typography>
-                                        <Typography component="h5" variant="h5" display="inline">   {article.time}</Typography>
+                                        {/* <Typography component="h5" variant="h5" display="inline">{article.date}</Typography> */}
+                                        <Typography component="h5" variant="h5" display="inline">{article.time}</Typography>
                                     </Box>
                                     <Box>
-                                        <SentimentScore data={article.sentimentScore} />
+                                        <SentimentScore data={article.sentimentScore} title="Sentiment Score" intSize={13} />
                                     </Box>
                                 </Box>
                                 <Typography component="h3" variant="h3">{article.title}</Typography>
                             </CardContent>
                             <CardActions
                                 style={{
-                                    width: "97%",
+                                    width: "98.5%",
                                     justifyContent: "flex-end"
                                 }}
                             >
@@ -52,7 +51,6 @@ class ArticleLarge extends Component {
                                     {article.source}
                                 </Button>
                             </CardActions>
-                            {/* </CardActionArea> */}
                         </Card>
                     )
                 })}

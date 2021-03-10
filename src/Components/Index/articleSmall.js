@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Button, Typography, MuiThemeProvider } from '@material-ui/core';
 import theme from '../../theme';
-// import OpenSans from '../../fonts/OpenSans-Regular.woff';
+import SentimentScore from './sentimentScore';
 
 class ArticleSmall extends Component {
     constructor(props) {
@@ -26,12 +26,13 @@ class ArticleSmall extends Component {
                                     order={1}
                                     item
                                     direction="column"
-                                    xs={3}
+                                    xs={2}
                                     align="right"
                                 // style={{ borderRight: `1px solid ${theme.palette.secondary.light}` }}
                                 >
                                     <Grid item><Typography component="h6" variant="h6" style={{ fontSize: '1em', fontWeight: '600', color: theme.palette.info.main, fontStyle: 'italic' }}>{article.source}</Typography></Grid>
-                                    <Grid item><Typography component="h6" variant="h6">{article.date}</Typography></Grid>
+                                    {/* <Grid item><Typography component="h6" variant="h6">{article.date}</Typography></Grid> */}
+                                    <Grid item><SentimentScore data={article.sentimentScore} title="S/S" intSize={10} /></Grid>
                                     <Grid item><Typography component="h6" variant="h6">{article.time}</Typography></Grid>
                                 </Grid>
 
