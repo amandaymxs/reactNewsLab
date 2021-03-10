@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Button, Typography, MuiThemeProvider } from '@material-ui/core';
 import theme from '../../theme';
-
+// import OpenSans from '../../fonts/OpenSans-Regular.woff';
 
 class ArticleSmall extends Component {
     constructor(props) {
@@ -20,31 +20,22 @@ class ArticleSmall extends Component {
                             <Grid
                                 key={article.id}
                                 container
-                                direction="row"
-                                style={{
-                                    width: '100%',
-                                    margin: 0,
-                                    marginBottom: '1.5em',
-                                    '&:last-child': {
-                                        marginBottom: 0
-                                    }
-                                }}
-                                spacing={2}
-                                alignItems="center"
+                                spacing={3}
                             >
                                 <Grid
-                                    container
+                                    order={1}
                                     item
                                     direction="column"
                                     xs={3}
-                                    spacing={0}
-                                    style={{ borderRight: `1px solid ${theme.palette.secondary.light}` }}>
-                                    <Typography align="right">{article.source}</Typography>
-                                    <Typography component="h6" variant="h6" align="right">{article.date}</Typography>
-                                    <Typography component="h6" variant="h6" align="right">{article.time}</Typography>
+                                    align="right"
+                                // style={{ borderRight: `1px solid ${theme.palette.secondary.light}` }}
+                                >
+                                    <Grid item><Typography component="h6" variant="h6" style={{ fontSize: '1em', fontWeight: '600', color: theme.palette.info.main, fontStyle: 'italic' }}>{article.source}</Typography></Grid>
+                                    <Grid item><Typography component="h6" variant="h6">{article.date}</Typography></Grid>
+                                    <Grid item><Typography component="h6" variant="h6">{article.time}</Typography></Grid>
                                 </Grid>
 
-                                <Grid xs={8}>
+                                <Grid xs={8} order={2} item >
                                     <Button
                                         variant="text"
                                         size="small"

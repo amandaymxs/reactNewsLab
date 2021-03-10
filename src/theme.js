@@ -1,7 +1,75 @@
 import { createMuiTheme } from '@material-ui/core';
-import Ubuntu from './fonts/Ubuntu-Regular.ttf';
-import Montserrat from './fonts/Montserrat-Bold.ttf';
-import OpenSans from './fonts/OpenSans-Regular.ttf';
+import MontserratBoldWoff from './fonts/Montserrat-Bold.woff';
+import OpenSansLightWoff from './fonts/OpenSans-Light.woff';
+import OpenSansRegularWoff from './fonts/OpenSans-Regular.woff';
+import PTSansRegularWoff from './fonts/PTSans-Regular.woff';
+import UbuntuRegularWoff from './fonts/Ubuntu-Regular.woff';
+import OpenSansItalicTtf from './fonts/OpenSans-Italic.ttf'
+
+const openSans = {
+    fontFamily: 'Open Sans',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+    local('Open Sans'),
+    url(${OpenSansRegularWoff}) format('woff')
+  `,
+}
+
+const openSansLight = {
+    fontFamily: 'Open Sans',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 100,
+    src: `
+    url(${OpenSansLightWoff}) format('woff')
+  `,
+}
+
+const openSansItalic = {
+    fontFamily: 'Open Sans',
+    fontStyle: 'italic',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+    url(${OpenSansItalicTtf}) format('truetype')
+  `,
+}
+
+const monserratBold = {
+    fontFamily: 'Montserrat',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 700,
+    src: `
+    local('Montserrat'),
+    local('Montserrat-Bold'),
+    url(${MontserratBoldWoff}) format('woff')
+  `,
+}
+
+const pTSans = {
+    fontFamily: 'PT Sans',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+    local('PT Sans'),
+    url(${PTSansRegularWoff}) format('woff')
+  `,
+}
+
+const ubuntu = {
+    fontFamily: 'Ubuntu',
+    fontStyle: 'normal',
+    fontDisplay: 'swap',
+    fontWeight: 400,
+    src: `
+    url(${UbuntuRegularWoff}) format('woff')
+  `,
+}
+
 
 const theme = createMuiTheme({
     palette: {
@@ -48,17 +116,20 @@ const theme = createMuiTheme({
     },
     typography: {
         allVariants: {
-            color: "#f4f4f4"
+            color: "#f4f4f4",
         },
+        fontFamily: [
+            'Open Sans',
+            'Montserrat',
+            'PT Sans',
+            'Ubuntu',
+        ].join(','),
     },
 })
 
 theme.props = {
     MuiAppBar: {
         position: 'static',
-    },
-    MuiTypography: {
-        color: theme.palette.primary.contrastText,
     },
 }
 
@@ -69,7 +140,8 @@ theme.overrides = {
                 backgroundColor: "#0F171A",
                 margin: 0,
             },
-        },
+            '@font-face': [openSans, openSansLight, openSansItalic, monserratBold, pTSans, ubuntu],
+        }
     },
     MuiIconButton: {
         root: {
@@ -86,7 +158,6 @@ theme.overrides = {
         root: {
             borderRadius: 10,
             textTransform: 'none',
-            fontFamily: Ubuntu,
             color: theme.palette.primary.contrastText,
         },
         containedPrimary: {
@@ -96,47 +167,44 @@ theme.overrides = {
             target: "_blank",
             rel: "noopener",
             backgroundColor: theme.palette.info.main,
-            padding: '0 1.5em',
+            padding: '0 1.3rem',
             color: theme.palette.primary.contrastText,
             textTransform: 'uppercase',
-            fontSize: 12,
+            fontFamily: 'Open Sans',
+            fontSize: '0.8rem',
+            fontWeight: 600,
+            fontStyle: 'italic',
 
         },
         textSizeSmall: {
             textTransform: 'capitalize',
-            fontSize: 12,
+            fontSize: '0.9rem',
         },
-        containedSizeSmall: {
-            padding: '0 1.5em',
-            fontSize: 10
-        }
     },
     MuiTypography: {
         root: {
-            fontFamily: OpenSans,
+            flexGrow: 1,
         },
         h1: {
-            flexGrow: 1,
-            fontFamily: Montserrat,
-            fontSize: 45,
-            fontWeight: 800,
+            fontFamily: 'Montserrat',
+            fontSize: '3.5rem',
+            // fontWeight: 800,
             textDecoration: 'none',
         },
         h3: {
             fontWeight: 100,
-            fontSize: 18,
+            fontSize: '1.4rem',
             marginTop: 10,
             textTransform: 'capitalize',
         },
-        h6: {
-            display: 'inline',
-            border: 2,
+        h5: {
             color: theme.palette.secondary.contrastText,
-            fontSize: 11.5,
+            fontSize: '0.8rem',
             textTransform: 'uppercase',
         },
-        alignRight: {
-            fontSize: 12,
+        h6: {
+            color: theme.palette.secondary.contrastText,
+            fontSize: '0.65rem',
             textTransform: 'uppercase',
         },
     },
@@ -144,9 +212,32 @@ theme.overrides = {
         root: {
             borderRadius: 15,
             marginBottom: 20,
-            // color: theme.palette.primary.contrastText,
+            flexDirection: 'column',
+            backgroundColor: theme.palette.primary.light,
         },
+    },
+    MuiCardHeader: {
+        title: {
+            paddingTop: '1rem',
+            paddingLeft: '2rem',
+            fontSize: '1.6rem',
+            fontWeight: 600,
+            textTransform: 'capitalize',
+            color: theme.palette.primary.contrastText,
+        }
+    },
+    MuiGrid: {
+        container: {
+            justifyContent: "center",
+        },
+        spacingXs2: {
+            width: '100%',
+            direction: 'row',
+        },
+        gridXs3: {
 
+        },
     },
 }
+
 export default theme;

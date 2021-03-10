@@ -2,12 +2,6 @@ import React, { Component } from 'react';
 import { MuiThemeProvider, Button } from '@material-ui/core';
 import theme from '../../theme';
 
-const style = () => {
-    root: {
-
-    }
-}
-
 class SentimentScore extends Component {
     constructor(props) {
         super(props);
@@ -21,19 +15,15 @@ class SentimentScore extends Component {
         const sentimentScore = data.toString();
         let color;
         let backgroundColor;
-        let border;
         if (sentimentScore > 5) {
             color = `${theme.palette.success.contrastText}`;
             backgroundColor = `${theme.palette.success.main}`;
-            border = `0.15em solid ${theme.palette.success.light}`
         } else if (sentimentScore < -5) {
             color = `${theme.palette.error.contrastText}`;
             backgroundColor = `${theme.palette.error.main}`;
-            border = `0.15em solid ${theme.palette.error.light}`;
         } else {
             color = `${theme.palette.warning.contrastText}`;
             backgroundColor = `${theme.palette.warning.main}`;
-            border = `0.15em solid ${theme.palette.warning.light}`
         }
         return (
             <MuiThemeProvider theme={theme} >
@@ -43,7 +33,6 @@ class SentimentScore extends Component {
                     style={{
                         color: color,
                         backgroundColor: backgroundColor,
-                        border: border,
                         textTransform: 'capitalize',
                     }}
                     disabled

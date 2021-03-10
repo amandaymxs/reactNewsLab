@@ -21,7 +21,7 @@ const Navbar = () => {
                     <Button variant="contained" color="primary"> Subscribe</Button>
                 </Toolbar>
             </AppBar>
-        </MuiThemeProvider>
+        </MuiThemeProvider >
     );
 }
 

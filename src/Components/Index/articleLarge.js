@@ -19,14 +19,17 @@ class ArticleLarge extends Component {
                     return (
                         <Card
                             key={article.id}
-                            style={{ backgroundColor: theme.palette.primary.dark }}
+                            style={{
+                                backgroundColor: theme.palette.primary.dark,
+                                padding: '1.2em',
+                            }}
                         >
                             {/* <CardActionArea> */}
-                            < CardContent >
+                            <CardContent>
                                 <Box display="flex" justifyContent="space-between">
                                     <Box>
-                                        <Typography component="h6" variant="h6">{article.date}  </Typography>
-                                        <Typography component="h6" variant="h6">   {article.time}</Typography>
+                                        <Typography component="h5" variant="h5" display="inline">{article.date}  </Typography>
+                                        <Typography component="h5" variant="h5" display="inline">   {article.time}</Typography>
                                     </Box>
                                     <Box>
                                         <SentimentScore data={article.sentimentScore} />

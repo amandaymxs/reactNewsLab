@@ -12,7 +12,7 @@ class Article extends Component {
         let textData = Data.articles.slice(sliceNum, maxNewsNum);
 
         return (
-            <CardContent >
+            <CardContent style={{ padding: '1em 3em' }}>
                 <ArticleLarge data={boxData} />
                 <ArticleSmall data={textData} />
             </CardContent >
