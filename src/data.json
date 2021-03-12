@@ -187,5 +187,31 @@
             "id": "t9",
             "sentimentScore": 6
         }
+    ],
+    "tickerTape": [
+        {
+            "symbol": "S&P/TSX",
+            "price": 19384.27,
+            "changeAmount": 110.17,
+            "changePercent": 0.60
+        },
+        {
+            "symbol": "S&P 500",
+            "price": 3906.71,
+            "changeAmount": -7.27,
+            "changePercent": -0.19
+        },
+        {
+            "symbol": "DOW",
+            "price": 31494.32,
+            "changeAmount": -1.02,
+            "changePercent": 0.00
+        },
+        {
+            "symbol": "Russell 2000",
+            "price": 2328.83,
+            "changeAmount": 43.21,
+            "changePercent": 1.90
+        }
     ]
 }

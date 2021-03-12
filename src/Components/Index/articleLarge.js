@@ -5,6 +5,9 @@ import SentimentScore from './sentimentScore';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const styles = {
+    container: {
+        marginBottom: '1.5em',
+    },
     articleCard: {
         backgroundColor: theme.palette.primary.dark,
         padding: '1.2em',
@@ -27,38 +30,40 @@ class ArticleLarge extends Component {
         const { classes } = this.props;
         return (
             <MuiThemeProvider theme={theme}>
-                {data.map((article) => {
-                    return (
-                        <Grid item style={{ width: '100%' }}>
-                            <Card
-                                key={article.id}
-                                classes={{ root: classes.articleCard }}
-                            >
-                                <CardContent>
-                                    <Box display="flex" justifyContent="space-between">
-                                        <Box>
-                                            <Typography component="h5" variant="h5" display="inline">{article.time}</Typography>
+                <div className={classes.container}>
+                    {data.map((article) => {
+                        return (
+                            <Grid item style={{ width: '100%' }}>
+                                <Card
+                                    key={article.id}
+                                    classes={{ root: classes.articleCard }}
+                                >
+                                    <CardContent>
+                                        <Box display="flex" justifyContent="space-between">
+                                            <Box>
+                                                <Typography component="h5" variant="h5" display="inline">{article.time}</Typography>
+                                            </Box>
+                                            <Box>
+                                                <SentimentScore data={article.sentimentScore} title="Sentiment Score" intSize={13} />
+                                            </Box>
                                         </Box>
-                                        <Box>
-                                            <SentimentScore data={article.sentimentScore} title="Sentiment Score" intSize={13} />
-                                        </Box>
-                                    </Box>
-                                    <Typography component="h3" variant="h3">{article.title}</Typography>
-                                </CardContent>
-                                <CardActions classes={{ root: classes.cardAction }}>
-                                    <Button
-                                        variant="contained"
-                                        size="large"
-                                        href={article.link}
-                                        endIcon={<ArrowRightIcon fontSize="small" />}
-                                    >
-                                        {article.source}
-                                    </Button>
-                                </CardActions>
-                            </Card>
-                        </Grid>
-                    )
-                })}
+                                        <Typography component="h3" variant="h3">{article.title}</Typography>
+                                    </CardContent>
+                                    <CardActions classes={{ root: classes.cardAction }}>
+                                        <Button
+                                            variant="contained"
+                                            size="large"
+                                            href={article.link}
+                                            endIcon={<ArrowRightIcon fontSize="small" />}
+                                        >
+                                            {article.source}
+                                        </Button>
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        )
+                    })}
+                </div>
             </MuiThemeProvider >
         )
     }

@@ -20,7 +20,6 @@ class Article extends Component {
         return (
             <Grid container direction="row" style={{
                 justifyContent: 'space-evenly', maxHeight: '100rem',
-                marginBottom: '1rem',
             }}>
                 <ArticleLarge data={boxData} />
                 <ArticleSmall data={textData} />

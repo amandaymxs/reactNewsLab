@@ -131,6 +131,13 @@ theme.props = {
     MuiAppBar: {
         position: 'static',
     },
+    MuiListItem: {
+        disableGutters: true,
+    },
+    MuiDivider: {
+        light: true,
+        variant: 'middle',
+    }
 }
 
 theme.overrides = {
@@ -139,6 +146,7 @@ theme.overrides = {
             body: {
                 backgroundColor: "#0F171A",
                 margin: 0,
+                overflowX: 'hidden',
             },
             '@font-face': [openSans, openSansLight, openSansItalic, monserratBold, pTSans, ubuntu],
         }
@@ -227,6 +235,12 @@ theme.overrides = {
             textTransform: 'uppercase',
             fontWeight: 400,
         },
+        subtitle2: {
+            fontSize: '0.8rem',
+            textTransform: 'capitalize',
+            fontWeight: 400,
+            marginBottom: '0.5rem',
+        },
         body1: {
             fontWeight: 100,
         },
@@ -269,7 +283,20 @@ theme.overrides = {
             margin: 0,
             border: '0.12rem solid black',
         }
-    }
+    },
+    MuiList: {
+        root: {
+            display: 'flex',
+        },
+    },
+    MuiDivider: {
+        root: {
+            marginBottom: '1.2rem',
+        },
+        middle: {
+            backgroundColor: `${theme.palette.secondary.light}`,
+        }
+    },
 }
 
 export default theme;
