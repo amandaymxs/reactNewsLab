@@ -26,11 +26,3 @@ const Navbar = () => {
 }
 
 export default Navbar;
-
-
-{/* <ul className="nav-list">
-                        <Link to="/" className="nav-link"><li className="nav-item">Home</li></Link>
-                        <Link to="/news" className="nav-link"><li className="nav-item">News</li></Link>
-                        <Link to="/about" className="nav-link"><li className="nav-item">About</li></Link>
-                        <Link to="/contact" className="nav-link"><li className="nav-item">Contact</li></Link>
-                    </ul> */}

@@ -230,17 +230,17 @@ theme.overrides = {
             fontSize: '0.65rem',
             textTransform: 'uppercase',
         },
-        subtitle1: {
-            fontSize: '0.8rem',
-            textTransform: 'uppercase',
-            fontWeight: 400,
-        },
-        subtitle2: {
-            fontSize: '0.8rem',
-            textTransform: 'capitalize',
-            fontWeight: 400,
-            marginBottom: '0.5rem',
-        },
+        // subtitle1: {
+        //     fontSize: '0.8rem',
+        //     textTransform: 'uppercase',
+        //     fontWeight: 400,
+        // },
+        // subtitle2: {
+        //     fontSize: '0.8rem',
+        //     textTransform: 'capitalize',
+        //     fontWeight: 400,
+        //     marginBottom: '0.5rem',
+        // },
         body1: {
             fontWeight: 100,
         },
@@ -251,7 +251,7 @@ theme.overrides = {
             marginBottom: 20,
             flexDirection: 'column',
             backgroundColor: theme.palette.primary.light,
-            padding: '1.5rem'
+            padding: '1.1rem'
         },
     },
     MuiCardHeader: {
@@ -270,11 +270,7 @@ theme.overrides = {
     MuiGrid: {
         container: {
             justifyContent: "space-evenly",
-        },
-        spacingXs2: {
-            width: '100%',
-            direction: 'row',
-        },
+        }
     },
     MuiAvatar: {
         root: {

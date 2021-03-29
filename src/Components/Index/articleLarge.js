@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
-import { Card, CardContent, CardActions, Box, Button, Typography, MuiThemeProvider, Grid, withStyles } from '@material-ui/core';
+import { Card, CardContent, CardActions, Button, Typography, MuiThemeProvider, Grid, withStyles } from '@material-ui/core';
 import theme from '../../theme';
 import SentimentScore from './sentimentScore';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 const styles = {
-    container: {
+
+    bodyContainer: {
         marginBottom: '1.5em',
     },
     articleCard: {
         backgroundColor: theme.palette.primary.dark,
         padding: '1.2em',
+        width: '100%',
     },
     cardAction: {
         width: "98.5%",
@@ -28,39 +30,37 @@ class ArticleLarge extends Component {
     render() {
         const { data } = this.state;
         const { classes } = this.props;
+        // console.log(Object.keys(data[0]._source))
         return (
             <MuiThemeProvider theme={theme}>
-                <div className={classes.container}>
+                <div className={classes.bodyContainer}>
                     {data.map((article) => {
-                        return (
-                            <Grid item style={{ width: '100%' }}>
-                                <Card
-                                    key={article.id}
-                                    classes={{ root: classes.articleCard }}
+                        return (<Card
+                            key={article._id}
+                            classes={{ root: classes.articleCard }}
+                        >
+                            <CardContent>
+                                <Grid container style={{ justifyContent: 'space-between' }}>
+                                    <Grid item order={1}>
+                                        <Typography component="h5" variant="h5" display="inline">{article._source.published_datetime}</Typography>
+                                    </Grid>
+                                    <Grid item order={2}>
+                                        <SentimentScore score={article._source.sentiment_score} sentiment={article._source.sentiment} title="Sentiment Score" intSize={13} />
+                                    </Grid>
+                                </Grid>
+                                <Typography component="h3" variant="h3">{article._source.title}</Typography>
+                            </CardContent>
+                            <CardActions classes={{ root: classes.cardAction }}>
+                                <Button
+                                    variant="contained"
+                                    size="large"
+                                    href={article._source.link}
+                                    endIcon={<ArrowRightIcon fontSize="small" />}
                                 >
-                                    <CardContent>
-                                        <Box display="flex" justifyContent="space-between">
-                                            <Box>
-                                                <Typography component="h5" variant="h5" display="inline">{article.time}</Typography>
-                                            </Box>
-                                            <Box>
-                                                <SentimentScore data={article.sentimentScore} title="Sentiment Score" intSize={13} />
-                                            </Box>
-                                        </Box>
-                                        <Typography component="h3" variant="h3">{article.title}</Typography>
-                                    </CardContent>
-                                    <CardActions classes={{ root: classes.cardAction }}>
-                                        <Button
-                                            variant="contained"
-                                            size="large"
-                                            href={article.link}
-                                            endIcon={<ArrowRightIcon fontSize="small" />}
-                                        >
-                                            {article.source}
-                                        </Button>
-                                    </CardActions>
-                                </Card>
-                            </Grid>
+                                    {article._source.article_source}
+                                </Button>
+                            </CardActions>
+                        </Card>
                         )
                     })}
                 </div>

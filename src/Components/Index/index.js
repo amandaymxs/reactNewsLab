@@ -2,10 +2,9 @@ import '../../index.css';
 import React from 'react';
 import Article from './article';
 import Tweet from './tweet';
-import TickerTape from './tickerTape';
+// import TickerTape from './tickerTape';
 import { MuiThemeProvider, Grid, Box, Card, CardHeader, CardActions, Button, CardContent, makeStyles, List } from '@material-ui/core';
 import theme from '../../theme';
-import Data from '../../data.json';
 
 const style = makeStyles({
     bodyGrid: {
@@ -29,10 +28,11 @@ const style = makeStyles({
 function Home() {
     const classes = style();
     return (
-        <MuiThemeProvider theme={theme}>
+
+        < MuiThemeProvider theme={theme} >
             <Box>
                 <List className={classes.tickerTapeContainer}>
-                    <TickerTape data={Data.tickerTape} />
+                    {/* <TickerTape data={Data.tickerTape} /> */}
                 </List>
                 <Grid
                     container
@@ -48,7 +48,7 @@ function Home() {
                         <Card>
                             <CardHeader title="Latest News Articles" />
                             <CardContent>
-                                <Article data={Data.articles} />
+                                <Article />
                             </CardContent>
                             <CardActions className={classes.cardActions}>
                                 <Button variant="text" color="secondary">Load More</Button>
@@ -59,7 +59,7 @@ function Home() {
                         <Card>
                             <CardHeader title="Latest News Tweets" />
                             <CardContent className={classes.tweetCardContent}>
-                                <Tweet data={Data.tweets} />
+                                <Tweet />
                             </CardContent>
                             <CardActions className={classes.cardActions}>
                                 <Button variant="text" color="secondary">View More</Button>

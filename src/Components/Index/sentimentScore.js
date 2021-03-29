@@ -3,15 +3,14 @@ import { MuiThemeProvider, Button } from '@material-ui/core';
 import theme from '../../theme';
 import PropTypes from 'prop-types';
 
-const SentimentScore = ({ data, title, intSize, children }) => {
-    // const { data, intSize } = this.state;
-    const sentimentScore = data.toString();
+const SentimentScore = ({ score, sentiment, title, intSize }) => {
+    const sentimentScore = (score * 100).toFixed(2);
     let color;
     let backgroundColor;
-    if (sentimentScore > 5) {
+    if (sentiment === 'positive') {
         color = `${theme.palette.success.contrastText}`;
         backgroundColor = `${theme.palette.success.main}`;
-    } else if (sentimentScore < -5) {
+    } else if (sentiment === 'negative') {
         color = `${theme.palette.error.contrastText}`;
         backgroundColor = `${theme.palette.error.main}`;
     } else {
@@ -30,13 +29,13 @@ const SentimentScore = ({ data, title, intSize, children }) => {
                     textTransform: 'capitalize',
                 }}
                 disabled
-            > {title}: {data}% </Button>
+            > {title}: {sentimentScore}% </Button>
         </MuiThemeProvider >
     )
 }
 
 SentimentScore.propTypes = {
-    data: PropTypes.string,
+    data: PropTypes.number,
     title: PropTypes.string,
     intSize: PropTypes.number
 }

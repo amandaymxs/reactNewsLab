@@ -32,9 +32,13 @@ function Footer() {
     return (
         <MuiThemeProvider theme={theme}>
             <div className={classes.root}>
-                <Typography variant='subtitle2' component='subtitle2' className={classes.leftText}>Privacy Policy | Terms of Use</Typography>
+                <Typography
+                    // component='subtitle1'
+                    className={classes.leftText}>Privacy Policy | Terms of Use</Typography>
                 <div className={classes.rightContainer}>
-                    <Typography variant='subtitle2' component='subtitle2' className={classes.rightText}>Copyright &#169; News Lab</Typography>
+                    <Typography
+                        //  component='subtitle1' 
+                        className={classes.rightText}>Copyright &#169; News Lab</Typography>
                     <Button variant='contained' className={classes.returnTopButton}>Return to top of page</Button>
                 </div>
             </div>

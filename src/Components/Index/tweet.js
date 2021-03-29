@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Grid, Avatar, MuiThemeProvider, Button, Typography, withStyles, Divider } from '@material-ui/core';
+import React, { useEffect, useState, useRef } from 'react';
+import { Grid, Avatar, MuiThemeProvider, Button, Typography, Divider, makeStyles } from '@material-ui/core';
 import theme from '../../theme';
 import SentimentScore from './sentimentScore';
+import avatar from '../../avatar.json';
 
-const styles = {
+const style = makeStyles({
     tweetsContainer: {
-        maxHeight: '20rem',
         marginBottom: '1rem',
         justifyContent: 'space-evenly'
     },
@@ -18,54 +18,59 @@ const styles = {
         alignSelf: 'flex-end',
         paddingRight: '5%',
     },
-}
+})
 
-class Tweet extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: this.props.data
-        }
-    }
-    render() {
-        const { data } = this.state;
-        const { classes } = this.props;
-        return (
-            <MuiThemeProvider theme={theme}>
-                {data.map((tweet) => {
-                    return (
-                        <div>
-                            <Grid container item direction="row" classes={{ root: classes.tweetsContainer }}>
-                                <Grid item xs={2} classes={{ root: classes.tweetAvatarGrid }}>
-                                    <Avatar alt={tweet.source} src={tweet.avatar} />
+const Tweet = () => {
+    const classes = style();
+
+    const [tweetItems, setTweetItems] = useState([]);
+    const [size, setSize] = useState('6');
+
+    useEffect(() => {
+        fetch(`http://35.203.53.106:8607/tweets/_search?sort=timestamp:desc&size=${size}`)
+            .then(response => response.json())
+            .then(json => setTweetItems(json.hits.hits))
+            .catch(error => console.log('Error:', error))
+    }, [])
+
+    return (
+        <MuiThemeProvider theme={theme}>
+            {tweetItems.map((tweetItem) => {
+                return (
+                    <div>
+                        <Grid container item direction="row" className={classes.tweetsContainer}>
+                            <Grid item xs={2} className={classes.tweetAvatarGrid}>
+                                <Avatar alt={tweetItem._source.username} src={avatar[tweetItem._source.username]} />
+                            </Grid>
+                            <Grid container item xs={9} direction="column" spacing={1}>
+                                <Grid item>
+                                    <Typography
+                                    //  component="subtitle1"
+                                    >@{tweetItem._source.username}</Typography>
                                 </Grid>
-                                <Grid container item xs={9} direction="column" spacing={0.5}>
-                                    <Grid item>
-                                        <Typography variant="subtitle1">@{tweet.source}</Typography>
-                                    </Grid>
-                                    <Grid item>
-                                        <SentimentScore data={tweet.sentimentScore} title='Sentiment Score' intSize='0.7rem' />
-                                    </Grid>
-                                    <Grid item>
-                                        <Typography variant="body1">
-                                            {tweet.text}
-                                        </Typography>
-                                    </Grid>
-                                    <Grid item classes={{ root: classes.tweetButtonGrid }}>
-                                        <Button
-                                            variant="contained"
-                                            size="small"
-                                            href={tweet.link}>View</Button>
-                                    </Grid>
+                                <Grid item>
+                                    <SentimentScore score={tweetItem._source.sentiment_score} sentiment={tweetItem._source.sentiment} title='Sentiment Score' intSize={11} />
+                                </Grid>
+                                <Grid item>
+                                    <Typography variant="body1">
+                                        {tweetItem._source.tweet}
+                                    </Typography>
+                                </Grid>
+                                <Grid item className={classes.tweetButtonGrid}>
+                                    <Button
+                                        variant="contained"
+                                        size="small"
+                                        href={tweetItem._source.link}>View</Button>
                                 </Grid>
                             </Grid>
-                            <Divider />
-                        </div>
-                    )
-                })}
-            </MuiThemeProvider >
-        )
-    }
+                        </Grid>
+                        <Divider />
+                    </div>
+                )
+            })}
+        </MuiThemeProvider >
+    )
 }
 
-export default withStyles(styles)(Tweet);
+
+export default Tweet;

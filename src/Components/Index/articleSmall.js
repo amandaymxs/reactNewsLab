@@ -26,14 +26,15 @@ class ArticleSmall extends Component {
     render() {
         const { data } = this.state;
         const { classes } = this.props;
+        // console.log(Object.keys(data[0]._source))
         return (
             <MuiThemeProvider theme={theme}>
-                <Grid item>
+                <div>
                     {data.map(article => {
                         return (
                             <div>
                                 <Grid
-                                    key={article.id}
+                                    key={article._id}
                                     container
                                     spacing={3}
                                     classes={{ root: classes.articleContainer }}
@@ -46,14 +47,14 @@ class ArticleSmall extends Component {
                                         xs={2}
                                         align="right"
                                     >
-                                        <Grid item><Typography component="h6" variant="h6" classes={{ root: classes.articleSource }}>{article.source}</Typography></Grid>
-                                        <Grid item><SentimentScore data={article.sentimentScore} title="S/S" intSize={10} /></Grid>
-                                        <Grid item><Typography component="h6" variant="h6">{article.time}</Typography></Grid>
+                                        <Grid item><Typography component="h6" variant="h6" classes={{ root: classes.articleSource }}>{article._source.article_source}</Typography></Grid>
+                                        <Grid item><SentimentScore score={article._source.sentiment_score} sentiment={article._source.sentiment} title="S/S" intSize={10} /></Grid>
+                                        <Grid item><Typography component="h6" variant="h6">{article._source.published_datetime}</Typography></Grid>
                                     </Grid>
 
                                     <Grid item order={2} xs={8}>
-                                        <Button variant="text" size="small" href={article.link}>
-                                            {article.title}
+                                        <Button variant="text" size="small" href={article._source.link}>
+                                            {article._source.title}
                                         </Button>
                                     </Grid>
                                 </Grid>
@@ -61,7 +62,7 @@ class ArticleSmall extends Component {
                             </div>
                         )
                     })}
-                </Grid>
+                </div>
             </MuiThemeProvider>
         )
     }

@@ -41,16 +41,13 @@ class TickerTape extends Component {
           <MuiThemeProvider theme={theme}>
             <ListItem style={{ justifyContent: 'center' }}>
               <Typography
-                component='subtitle1'
-                variant='subtitle1'
+                // component='subtitle1'
                 classes={{ root: classes.root, subtitle1: classes.symbolItem }}>{symbol}</Typography>
               <Typography
-                component='subtitle1'
-                variant='subtitle1'
+                // component='subtitle1'
                 classes={{ root: classes.root }}>{price}</Typography>
               <Typography
-                component='subtitle1'
-                variant='subtitle1'
+                // component='subtitle1'
                 classes={{ root: classes.root }}
                 style={{ color: changeColor }}>{changeAmount} ({changePercent})</Typography>
             </ListItem>
@@ -61,53 +58,4 @@ class TickerTape extends Component {
   }
 }
 
-export default withStyles(styles)(TickerTape);
-
-
-
-
-{/* <div class="tradingview-widget-container">
-  <div class="tradingview-widget-container__widget"></div>
-  <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com" rel="noopener" target="_blank"><span
-    class="blue-text">Ticker Tape</span></a> by TradingView</div>
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js"
-    async>
-    {
-      "symbols": [
-      {
-      "proName": "FOREXCOM:SPXUSD",
-        "title": "S&P 500"
-      },
-      {
-      "proName": "FOREXCOM:NSXUSD",
-        "title": "Nasdaq 100"
-      },
-      {
-      "description": "Dow Jones",
-        "proName": "TVC:DJI"
-      },
-      {
-      "description": "Russell 2000",
-        "proName": "TVC:RUT"
-      },
-      {
-      "description": "Crude Oil",
-        "proName": "TVC:USOIL"
-      },
-      {
-      "description": "Gold",
-        "proName": "TVC:GOLD"
-      },
-      {
-      "description": "Bitcoin",
-        "proName": "BITBAY:BTCUSD"
-      }
-    ],
-      "showSymbolLogo": true,
-        "colorTheme": "dark",
-          "isTransparent": true,
-            "displayMode": "adaptive",
-              "locale": "en"
-  }
-</script>
-</div> */}
+// export default withStyles(styles)(TickerTape);
