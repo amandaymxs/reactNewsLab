@@ -38,25 +38,25 @@ const Tweet = () => {
             {tweetItems.map((tweetItem) => {
                 return (
                     <div>
-                        <Grid container item direction="row" className={classes.tweetsContainer}>
-                            <Grid item xs={2} className={classes.tweetAvatarGrid}>
+                        <Grid container direction="row" className={classes.tweetsContainer}>
+                            <Grid xs={2} className={classes.tweetAvatarGrid}>
                                 <Avatar alt={tweetItem._source.username} src={avatar[tweetItem._source.username]} />
                             </Grid>
                             <Grid container item xs={9} direction="column" spacing={1}>
-                                <Grid item>
+                                <Grid>
                                     <Typography
                                     //  component="subtitle1"
                                     >@{tweetItem._source.username}</Typography>
                                 </Grid>
-                                <Grid item>
-                                    <SentimentScore score={tweetItem._source.sentiment_score} sentiment={tweetItem._source.sentiment} title='Sentiment Score' intSize={11} />
+                                <Grid>
+                                    <SentimentScore score={tweetItem._source.sentiment_score} sentiment={tweetItem._source.sentiment} title='S/S ' intSize={11} />
                                 </Grid>
-                                <Grid item>
+                                <Grid>
                                     <Typography variant="body1">
                                         {tweetItem._source.tweet}
                                     </Typography>
                                 </Grid>
-                                <Grid item className={classes.tweetButtonGrid}>
+                                <Grid className={classes.tweetButtonGrid}>
                                     <Button
                                         variant="contained"
                                         size="small"

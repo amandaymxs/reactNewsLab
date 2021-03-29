@@ -27,10 +27,10 @@ class ArticleLarge extends Component {
             data: this.props.data
         }
     }
+
     render() {
         const { data } = this.state;
         const { classes } = this.props;
-        // console.log(Object.keys(data[0]._source))
         return (
             <MuiThemeProvider theme={theme}>
                 <div className={classes.bodyContainer}>
