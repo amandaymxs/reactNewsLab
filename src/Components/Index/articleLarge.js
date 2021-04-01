@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Card, CardContent, CardActions, Button, Typography, MuiThemeProvider, Grid, withStyles } from '@material-ui/core';
+import dateformat from 'dateformat';
 import theme from '../../theme';
 import SentimentScore from './sentimentScore';
 import ArrowRightIcon from '@material-ui/icons/ArrowRight';
@@ -42,7 +43,7 @@ class ArticleLarge extends Component {
                             <CardContent>
                                 <Grid container style={{ justifyContent: 'space-between' }}>
                                     <Grid item order={1}>
-                                        <Typography component="h5" variant="h5" display="inline">{article._source.published_datetime}</Typography>
+                                        <Typography component="h5" variant="h5" display="inline">{dateformat(article._source.published_datetime, "mmmm dS, yyyy, h:MM:ss TT")}</Typography>
                                     </Grid>
                                     <Grid item order={2}>
                                         <SentimentScore score={article._source.sentiment_score} sentiment={article._source.sentiment} title="Sentiment Score" intSize={13} />
@@ -56,6 +57,7 @@ class ArticleLarge extends Component {
                                     size="large"
                                     href={article._source.link}
                                     endIcon={<ArrowRightIcon fontSize="small" />}
+                                    style={{ letterSpacing: '0.1em' }}
                                 >
                                     {article._source.article_source}
                                 </Button>

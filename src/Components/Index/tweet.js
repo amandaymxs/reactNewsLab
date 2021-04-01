@@ -1,8 +1,9 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { Grid, Avatar, MuiThemeProvider, Button, Typography, Divider, makeStyles } from '@material-ui/core';
 import theme from '../../theme';
 import SentimentScore from './sentimentScore';
 import avatar from '../../avatar.json';
+import useFetch from '../../Utilities/useFetch';
 
 const style = makeStyles({
     tweetsContainer: {
@@ -23,19 +24,16 @@ const style = makeStyles({
 const Tweet = () => {
     const classes = style();
 
-    const [tweetItems, setTweetItems] = useState([]);
-    const [size, setSize] = useState('6');
+    const [size, setSize] = useState('10');
 
-    useEffect(() => {
-        fetch(`http://35.203.53.106:8607/tweets/_search?sort=timestamp:desc&size=${size}`)
-            .then(response => response.json())
-            .then(json => setTweetItems(json.hits.hits))
-            .catch(error => console.log('Error:', error))
-    }, [])
+    const { queryItems: tweetItems, isPending } = useFetch('tweets', 'timestamp:desc', size);
 
-    return (
-        <MuiThemeProvider theme={theme}>
-            {tweetItems.map((tweetItem) => {
+    const displayTweets = () => {
+        if (isPending) {
+            return <p> Loading page...</p>
+        }
+        return (
+            tweetItems.map((tweetItem) => {
                 return (
                     <div>
                         <Grid container direction="row" className={classes.tweetsContainer}>
@@ -67,7 +65,13 @@ const Tweet = () => {
                         <Divider />
                     </div>
                 )
-            })}
+            })
+        )
+    }
+
+    return (
+        <MuiThemeProvider theme={theme}>
+            {displayTweets()}
         </MuiThemeProvider >
     )
 }
