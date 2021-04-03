@@ -21,12 +21,13 @@ const style = makeStyles({
     },
 })
 
-const Tweet = () => {
+const Tweet = (props) => {
+    const { delay } = props;
     const classes = style();
 
     const [size, setSize] = useState('10');
 
-    const { queryItems: tweetItems, isPending } = useFetch('tweets', 'timestamp:desc', size);
+    const { queryItems: tweetItems, isPending } = useFetch('tweets', 'timestamp:desc', size, delay);
 
     const displayTweets = () => {
         if (isPending) {

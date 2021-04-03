@@ -4,7 +4,7 @@ import theme from '../../theme';
 import PropTypes from 'prop-types';
 
 const SentimentScore = ({ score, sentiment, title, intSize }) => {
-    const sentimentScore = (score * 100).toFixed(2);
+    const sentimentScore = (score * 100).toFixed(1);
     let color;
     let backgroundColor;
     if (sentiment === 'positive') {

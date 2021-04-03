@@ -1,10 +1,11 @@
 import '../../index.css';
-import React from 'react';
+import React, { useState } from 'react';
 import Article from './article';
 import Tweet from './tweet';
 // import TickerTape from './tickerTape';
 import { MuiThemeProvider, Grid, Box, Card, CardHeader, CardActions, Button, CardContent, makeStyles, List } from '@material-ui/core';
 import theme from '../../theme';
+import useInterval from '../../Utilities/useInterval';
 
 const style = makeStyles({
     bodyGrid: {
@@ -26,7 +27,17 @@ const style = makeStyles({
 })
 
 function Home() {
+    const [delay, setDelay] = useState(10000);
+    const [count, setCount] = useState(0);
     const classes = style();
+
+    useInterval(() => {
+        // Your custom logic here
+        setCount(count + 1);
+    }, 1000);
+
+    // console.log(count);
+
     return (
 
         < MuiThemeProvider theme={theme} >
@@ -48,7 +59,7 @@ function Home() {
                         <Card>
                             <CardHeader title="Latest News Articles" />
                             <CardContent>
-                                <Article />
+                                <Article delay={delay} />
                             </CardContent>
                             <CardActions className={classes.cardActions}>
                                 <Button variant="text" color="secondary">Load More</Button>
@@ -59,7 +70,7 @@ function Home() {
                         <Card>
                             <CardHeader title="Latest News Tweets" />
                             <CardContent className={classes.tweetCardContent}>
-                                <Tweet />
+                                <Tweet delay={delay} />
                             </CardContent>
                             <CardActions className={classes.cardActions}>
                                 <Button variant="text" color="secondary">View More</Button>

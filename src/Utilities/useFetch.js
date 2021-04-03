@@ -1,22 +1,5 @@
 import { useState, useEffect, useRef } from 'react';
-
-
-function useInterval(callback, delay) {
-    const savedCallback = useRef(null);
-    useEffect(() => {
-        savedCallback.current = callback;
-    }, [callback]);
-
-    useEffect(() => {
-        function tick() {
-            savedCallback.current();
-        }
-        if (delay !== null) {
-            let id = setInterval(tick, delay);
-            return () => clearInterval(id);
-        }
-    }, [delay]);
-}
+import useInterval from './useInterval';
 
 const useFetch = (sectionQuery, sortQuery, sizeQuery, delay) => {
     const [queryItems, setQueryItems] = useState([]);
@@ -25,13 +8,11 @@ const useFetch = (sectionQuery, sortQuery, sizeQuery, delay) => {
     const prevStatQuery = useRef(queryStat);
 
     const isNewData = () => {
-        fetch(`http://35.203.53.106:8607/${sectionQuery}/_stats`)
+        fetch(`http://35.203.53.106:8607/${sectionQuery}/_search?sort=${sortQuery}&size=1`)
             .then(response => response.json())
             .then(json => {
-                console.log(`1queryStat for ${sectionQuery} is ${queryStat}`);
-                if (prevStatQuery.current != json._all.primaries.docs.count) {
-                    setQueryStat(json._all.primaries.docs.count);
-                    console.log(`2prevStatQuery for ${sectionQuery} is ${prevStatQuery.current}`);
+                if (prevStatQuery.current !== json.hits.hits[0]._id) {
+                    setQueryStat(json.hits.hits[0]._id);
                 }
             })
             .catch(error => {
@@ -58,18 +39,11 @@ const useFetch = (sectionQuery, sortQuery, sizeQuery, delay) => {
     useInterval(isNewData, delay);
 
     useEffect(() => {
-        requestData();
-    }, [])
-
-    useEffect(() => {
         prevStatQuery.current = queryStat;
         requestData();
     }, [queryStat])
-
-
 
     return { queryItems, isPending };
 }
 
 export default useFetch;
-

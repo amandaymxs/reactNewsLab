@@ -4,10 +4,11 @@ import ArticleLarge from './articleLarge';
 import ArticleSmall from './articleSmall';
 import useFetch from '../../Utilities/useFetch';
 
-const Article = () => {
-    const [size, setSize] = useState('15');
 
-    const { queryItems: newsItems, isPending } = useFetch('news', 'published_datetime:desc', size);
+const Article = (props) => {
+    const { delay } = props;
+    const [size, setSize] = useState(15);
+    const { queryItems: newsItems, isPending } = useFetch('news', 'published_datetime:desc', size, delay);
 
     const displayArticles = () => {
         if (isPending) {

@@ -74,4 +74,3 @@ class ArticleLarge extends Component {
 export default withStyles(styles)(ArticleLarge);
 
 
-

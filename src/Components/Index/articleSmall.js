@@ -71,4 +71,3 @@ class ArticleSmall extends Component {
 }
 
 export default withStyles(styles)(ArticleSmall);
-
